@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "8505ee56-7ead-465d-99b7-801f699abf3c",
+		"name": "Salesforce, SAP and Mule Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer sync to SAP ECC",
+			"item": [
+				{
+					"name": "cloud hub customer sync to sap ecc",
+					"_postman_id": "147a4362-1293-4f8f-88ac-d2a6f710a7a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+					},
+					"response": [
+						{
+							"id": "6577f801-68d1-448b-ae80-19f0db65df0e",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
+				}
+			],
+			"_postman_id": "d2605912-6fe3-40c8-a060-294765a94f0b"
+		},
+		{
+			"name": "Connection Test to SAP",
+			"item": [
+				{
+					"name": "Local SAP Connection Terst",
+					"_postman_id": "d8bd5121-02ac-4dba-9b4e-5bb1b6c0202a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/connection/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "Cloud Hub - SAP Connection Test",
+					"_postman_id": "f5e862b6-7ddc-4df1-80c4-de78d41786d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://connection-test-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/connection/maintain"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "b00e5096-535b-4912-aabb-5b3d7445960b"
+		},
+		{
+			"name": "Get Pricing Details",
+			"item": [
+				{
+					"name": "Get Pricing Details",
+					"_postman_id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      \r\n{\r\n  \"Recordtype\": \"TA\",\r\n  \"Country\": \"GB\",\r\n  \"CustomerId\": \"100045\",\r\n   \"PriceDate\":\"20230123\",\r\n  \"Items\": [\r\n    {\r\n      \"ProductCode\": \"1009\",\r\n      \"Quantity\": \"1\",\r\n      \"UOM\": \"EA\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/Price/fetchPrice"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "5112c74f-0e43-4a18-abd0-ee665bd93a78"
+		},
+		{
+			"name": "Quotation Replication",
+			"item": [
+				{
+					"name": "Local-Replicate Quotation",
+					"_postman_id": "fb611a54-9a3c-453c-8574-448adc62bd95",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-01-24\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"Each\"\r\n         }\r\n      ],\r\n      \"partner\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/Quotation/createQuotation"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
+		},
+		{
+			"name": "Mule-Connection-Test -get()",
+			"_postman_id": "9d7f1a2f-e08c-4114-8c99-8b8cba30a800",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "mule_basic_auth_user",
+						"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test",
+				"description": "Basic Authentication Connection Test to Mule"
+			},
+			"response": [
+				{
+					"id": "42d65ab8-4851-4ae5-b713-edc1a2a83f42",
+					"name": "Mule-Connection-Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Mule-Connection-Test -post()",
+			"_postman_id": "34e16d81-4196-4b88-93e1-e07c5d737d80",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "mule_basic_auth_user",
+						"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"SFDC\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test",
+				"description": "Basic Authentication Connection Test to Mule"
+			},
+			"response": [
+				{
+					"id": "63ada3e9-19da-4cca-9ed8-f5fa50075a4c",
+					"name": "Mule-Connection-Test -post()",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"SFDC\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"Connection00\": \"Success\",\n    \"Your System Name\": \"SFDC\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Connection-Test-To-SFDC",
+			"_postman_id": "55539904-e22f-4bb8-b32d-eb97e01db251",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://connection-test-to-sfdc-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/sfdc/connection-test?accountName=ZGSK-4",
+					"protocol": "https",
+					"host": [
+						"connection-test-to-sfdc-lzym2p",
+						"5sc6y6-2",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"sfdc",
+						"connection-test"
+					],
+					"query": [
+						{
+							"key": "accountName",
+							"value": "ZGSK-4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "c5fc0807-6675-4f43-8431-f6e961c6285b",
+					"name": "Connection-Test-To-SFDC",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/sfdc/connection-test?accountName=ZGSK-4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"sfdc",
+								"connection-test"
+							],
+							"query": [
+								{
+									"key": "accountName",
+									"value": "ZGSK-4"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Old-sfdc-to-ecc-test",
+			"_postman_id": "7dbd22dc-1e4e-4aad-ba4f-caf2f15a3352",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"AccountReplicationRequest\" : {\r\n    \"item\" : [ {\r\n      \"City__c\" : \"GLASGOW\",\r\n      \"Country__c\" : \"GB\",\r\n      \"House_Number__c\" : \"\",\r\n      \"Id\" : \"0015r00000dQXuTAAW\",\r\n      \"Industry\" : \"NULL\",\r\n      \"Name\" : \"Jinu Customer test\",\r\n      \"Phone\" : \"\",\r\n      \"Post_Code__c\" : \"G51 1AH\",\r\n      \"Region__c\" : \"\",\r\n      \"SAP_ERP_ID__c\" : \"\",\r\n      \"Status__c\" : \"Active\",\r\n      \"Street_1__c\" : \"0/1\",\r\n      \"Street_2__c\" : \"19 Harley Street\",\r\n      \"Street_3__c\" : \"\",\r\n      \"Street_4__c\" : \"\",\r\n      \"Type\" : \"Installer\",\r\n      \"Business_Email__c\" : \"\",\r\n      \"Fax\" : \"\",\r\n      \"Website\" : \"\",\r\n      \"Brand\" : \"0001\"\r\n    } ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://int-1-rest-sfdc-ecc-replicatecustomer-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/Account/maintain"
+			},
+			"response": []
+		},
+		{
+			"name": "AccountSync",
+			"_postman_id": "0f398721-ac50-4250-8590-8a9fc358e98b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+			},
+			"response": []
+		}
+	]
+}
