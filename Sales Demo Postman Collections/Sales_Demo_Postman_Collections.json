@@ -10,7 +10,7 @@
 			"item": [
 				{
 					"name": "cloud hub customer sync to sap ecc",
-					"_postman_id": "147a4362-1293-4f8f-88ac-d2a6f710a7a9",
+					"id": "147a4362-1293-4f8f-88ac-d2a6f710a7a9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -85,14 +85,14 @@
 					]
 				}
 			],
-			"_postman_id": "d2605912-6fe3-40c8-a060-294765a94f0b"
+			"id": "d2605912-6fe3-40c8-a060-294765a94f0b"
 		},
 		{
 			"name": "Connection Test to SAP",
 			"item": [
 				{
 					"name": "Local SAP Connection Terst",
-					"_postman_id": "d8bd5121-02ac-4dba-9b4e-5bb1b6c0202a",
+					"id": "d8bd5121-02ac-4dba-9b4e-5bb1b6c0202a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -114,7 +114,7 @@
 				},
 				{
 					"name": "Cloud Hub - SAP Connection Test",
-					"_postman_id": "f5e862b6-7ddc-4df1-80c4-de78d41786d5",
+					"id": "f5e862b6-7ddc-4df1-80c4-de78d41786d5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -135,14 +135,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "b00e5096-535b-4912-aabb-5b3d7445960b"
+			"id": "b00e5096-535b-4912-aabb-5b3d7445960b"
 		},
 		{
 			"name": "Get Pricing Details",
 			"item": [
 				{
-					"name": "Get Pricing Details",
-					"_postman_id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
+					"name": "Local - Get Pricing Details",
+					"id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -163,14 +163,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "5112c74f-0e43-4a18-abd0-ee665bd93a78"
+			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78"
 		},
 		{
 			"name": "Quotation Replication",
 			"item": [
 				{
 					"name": "Local-Replicate Quotation",
-					"_postman_id": "fb611a54-9a3c-453c-8574-448adc62bd95",
+					"id": "fb611a54-9a3c-453c-8574-448adc62bd95",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -191,11 +191,11 @@
 					"response": []
 				}
 			],
-			"_postman_id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
+			"id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
 		},
 		{
 			"name": "Mule-Connection-Test -get()",
-			"_postman_id": "9d7f1a2f-e08c-4114-8c99-8b8cba30a800",
+			"id": "9d7f1a2f-e08c-4114-8c99-8b8cba30a800",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -249,7 +249,7 @@
 		},
 		{
 			"name": "Mule-Connection-Test -post()",
-			"_postman_id": "34e16d81-4196-4b88-93e1-e07c5d737d80",
+			"id": "34e16d81-4196-4b88-93e1-e07c5d737d80",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -311,7 +311,7 @@
 		},
 		{
 			"name": "Connection-Test-To-SFDC",
-			"_postman_id": "55539904-e22f-4bb8-b32d-eb97e01db251",
+			"id": "55539904-e22f-4bb8-b32d-eb97e01db251",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -376,7 +376,7 @@
 		},
 		{
 			"name": "Old-sfdc-to-ecc-test",
-			"_postman_id": "7dbd22dc-1e4e-4aad-ba4f-caf2f15a3352",
+			"id": "7dbd22dc-1e4e-4aad-ba4f-caf2f15a3352",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -398,7 +398,7 @@
 		},
 		{
 			"name": "AccountSync",
-			"_postman_id": "0f398721-ac50-4250-8590-8a9fc358e98b",
+			"id": "0f398721-ac50-4250-8590-8a9fc358e98b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
