@@ -336,7 +336,7 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8081/Quotation/getHistory/20000090"
+								"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
 							},
 							"status": "OK",
 							"code": 200,
@@ -476,7 +476,7 @@
 	],
 	"variable": [
 		{
-			"id": "6a74a02d-aaba-486f-a6ce-751e68fa8924",
+			"id": "17b8fad6-cb36-405b-a5c9-7afe72b52181",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
