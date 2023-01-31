@@ -327,7 +327,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8081/Quotation/getHistory/20000090"
+						"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
 					},
 					"response": [
 						{
@@ -476,7 +476,7 @@
 	],
 	"variable": [
 		{
-			"id": "17b8fad6-cb36-405b-a5c9-7afe72b52181",
+			"id": "606ac491-4260-4831-8c66-6d5b72850c5d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
