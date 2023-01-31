@@ -329,7 +329,22 @@
 						"header": [],
 						"url": "http://localhost:8081/Quotation/getHistory/20000090"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "f06b8f38-dbbe-4cdc-b9be-c484ea673aa0",
+							"name": "Local - Get Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/Quotation/getHistory/20000090"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
 				}
 			],
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
