@@ -317,7 +317,21 @@
 		},
 		{
 			"name": "Quotation History",
-			"item": [],
+			"item": [
+				{
+					"name": "Local - Get Quotation History",
+					"id": "58430e7c-8877-44ab-8e22-513a836e8dc5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/Quotation/getHistory/20000090"
+					},
+					"response": []
+				}
+			],
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
 		},
 		{
@@ -426,19 +440,6 @@
 					}
 				},
 				"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
-			},
-			"response": []
-		},
-		{
-			"name": "Local - Get Quotation History",
-			"id": "58430e7c-8877-44ab-8e22-513a836e8dc5",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8081/Quotation/getHistory/{20000090}"
 			},
 			"response": []
 		}
