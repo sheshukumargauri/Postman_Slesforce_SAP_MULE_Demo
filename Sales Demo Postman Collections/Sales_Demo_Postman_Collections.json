@@ -473,5 +473,12 @@
 			},
 			"response": []
 		}
+	],
+	"variable": [
+		{
+			"id": "6a74a02d-aaba-486f-a6ce-751e68fa8924",
+			"key": "QuotationId",
+			"value": "20000090"
+		}
 	]
 }
