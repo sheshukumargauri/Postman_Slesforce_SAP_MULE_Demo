@@ -331,20 +331,6 @@
 					},
 					"response": [
 						{
-							"id": "f06b8f38-dbbe-4cdc-b9be-c484ea673aa0",
-							"name": "Local - Get Quotation History",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "http://localhost:8081/Quotation/getHistory/20000090"
-							},
-							"_postman_previewlanguage": null,
-							"header": null,
-							"cookie": [],
-							"responseTime": null,
-							"body": null
-						},
-						{
 							"id": "4e214ac3-5a44-4286-84ef-98ca8215113c",
 							"name": "Local - Get Quotation History",
 							"originalRequest": {
