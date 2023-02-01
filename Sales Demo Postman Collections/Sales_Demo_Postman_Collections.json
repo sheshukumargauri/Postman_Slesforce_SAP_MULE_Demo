@@ -365,7 +365,7 @@
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
 		},
 		{
-			"name": "New Folder",
+			"name": "Connection Test to Mule",
 			"item": [],
 			"id": "3a108c99-816e-4768-abbc-6e108639a7c7"
 		},
@@ -481,7 +481,7 @@
 	],
 	"variable": [
 		{
-			"id": "b66ee26e-3a74-4ec4-bad3-4a1d7994ca2b",
+			"id": "c71f2969-8923-4086-9f1d-ccfd8db4dafa",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
