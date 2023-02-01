@@ -366,7 +366,45 @@
 		},
 		{
 			"name": "Connection Test to Mule",
-			"item": [],
+			"item": [
+				{
+					"name": "connection-test",
+					"id": "0e57ecd6-c778-4fd9-9de3-774fc0fde70c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/connection-test"
+					},
+					"response": [
+						{
+							"id": "8503cfd7-c472-41af-9141-cc9971fce596",
+							"name": "Default",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/connection-test"
+							},
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
 			"id": "3a108c99-816e-4768-abbc-6e108639a7c7"
 		},
 		{
@@ -481,7 +519,7 @@
 	],
 	"variable": [
 		{
-			"id": "c71f2969-8923-4086-9f1d-ccfd8db4dafa",
+			"id": "e7068d06-357a-4055-8627-d4e026e2a8cf",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
