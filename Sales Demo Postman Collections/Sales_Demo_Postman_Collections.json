@@ -365,6 +365,11 @@
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
 		},
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "3a108c99-816e-4768-abbc-6e108639a7c7"
+		},
+		{
 			"name": "Connection-Test-To-SFDC",
 			"id": "55539904-e22f-4bb8-b32d-eb97e01db251",
 			"protocolProfileBehavior": {
@@ -476,7 +481,7 @@
 	],
 	"variable": [
 		{
-			"id": "820d83e6-740e-471e-89db-0733779efcb4",
+			"id": "b66ee26e-3a74-4ec4-bad3-4a1d7994ca2b",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
