@@ -471,33 +471,11 @@
 					"body": null
 				}
 			]
-		},
-		{
-			"name": "Old-sfdc-to-ecc-test",
-			"id": "7dbd22dc-1e4e-4aad-ba4f-caf2f15a3352",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"AccountReplicationRequest\" : {\r\n    \"item\" : [ {\r\n      \"City__c\" : \"GLASGOW\",\r\n      \"Country__c\" : \"GB\",\r\n      \"House_Number__c\" : \"\",\r\n      \"Id\" : \"0015r00000dQXuTAAW\",\r\n      \"Industry\" : \"NULL\",\r\n      \"Name\" : \"Jinu Customer test\",\r\n      \"Phone\" : \"\",\r\n      \"Post_Code__c\" : \"G51 1AH\",\r\n      \"Region__c\" : \"\",\r\n      \"SAP_ERP_ID__c\" : \"\",\r\n      \"Status__c\" : \"Active\",\r\n      \"Street_1__c\" : \"0/1\",\r\n      \"Street_2__c\" : \"19 Harley Street\",\r\n      \"Street_3__c\" : \"\",\r\n      \"Street_4__c\" : \"\",\r\n      \"Type\" : \"Installer\",\r\n      \"Business_Email__c\" : \"\",\r\n      \"Fax\" : \"\",\r\n      \"Website\" : \"\",\r\n      \"Brand\" : \"0001\"\r\n    } ]\r\n  }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "https://int-1-rest-sfdc-ecc-replicatecustomer-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/Account/maintain"
-			},
-			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "04fad0b0-f57a-4f86-87c2-1dfcfa6da197",
+			"id": "cc163b90-a1bf-43d1-aa6b-d21905b08685",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
