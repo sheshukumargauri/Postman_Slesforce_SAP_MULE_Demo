@@ -179,7 +179,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-01-24\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"Each\"\r\n         }\r\n      ],\r\n      \"partner\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"raw": "{\r\n    \"QuoteRequest\": {\r\n        \"QuoteName\": \"GTPL Quote for salesforce\",\r\n        \"RecordType\": \"0001\",\r\n        \"CreationDate\": \"2023-01-24\",\r\n        \"ExpirationDate\": \"2023-07-23\",\r\n        \"LineItems\": [\r\n            {\r\n                \"LineNo\": \"123\",\r\n                \"ProductCode\": \"1009\",\r\n                \"ProductDescription\": \"Office 365\",\r\n                \"Quantity\": \"10\",\r\n                \"UOM\": \"EA\"\r\n            }\r\n        ],\r\n        \"partner\": [\r\n            {\r\n                \"ERPId\": \"100045\",\r\n                \"PartnerRole\": \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -514,7 +514,7 @@
 	],
 	"variable": [
 		{
-			"id": "37a5350f-ef15-42af-a120-8a2499d14cb2",
+			"id": "3c0702d8-608c-41eb-ae82-f4abaf76ef05",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
