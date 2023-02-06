@@ -191,7 +191,7 @@
 					"response": [
 						{
 							"id": "a2689968-9250-4bb8-8e79-af99c049cf9c",
-							"name": "Local-Replicate Quotation",
+							"name": "Local-Replicate Quotation-Response-success",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -514,7 +514,7 @@
 	],
 	"variable": [
 		{
-			"id": "dbd5198c-851c-4f4a-bc5d-38bd9f7f5579",
+			"id": "37a5350f-ef15-42af-a120-8a2499d14cb2",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
