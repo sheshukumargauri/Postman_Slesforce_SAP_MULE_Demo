@@ -409,7 +409,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.dw4w1g-2.gbr-e1.cloudhub.io//Quotation/getHistory/{{QuotationId}}"
+						"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.dw4w1g-2.gbr-e1.cloudhub.io/Quotation/getHistory/{{QuotationId}}"
 					},
 					"response": [
 						{
@@ -557,7 +557,7 @@
 	],
 	"variable": [
 		{
-			"id": "c995dfc0-4989-4bf5-ac8a-8c3bed977b45",
+			"id": "7533a47c-5d3e-4c9c-b086-f7f30ee0d720",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
