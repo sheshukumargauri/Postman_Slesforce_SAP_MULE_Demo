@@ -447,6 +447,43 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0020000090\",\n                \"CreationDate\": \"2023-01-26Z\",\n                \"Description\": \"Quotation\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000014894\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"0020000090\"\n            },\n            {\n                \"DocumentStatus\": \"Being processed\",\n                \"CurrentDocumentNumber\": \"0080017354\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Delivery\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0000014894\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"20230127\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4900000000\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"GD goods issue:delvy\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"id": "b027dbb1-9418-4564-bb49-e491a87da39c",
+							"name": "CloudHub - Get Quotation History Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.5sc6y6-3.usa-e2.cloudhub.io/Quotation/getHistory/20000090"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1860"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Feb 2023 11:03:49 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "ba1f2f70-c4c0-4cbe-bbe9-1fb32e4101cc"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"1234567890\",\n                \"CreationDate\": \"2023-01-31\",\n                \"Description\": \"ABC Customer quote\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Being processed\",\n                \"CurrentDocumentNumber\": \"0987654321\",\n                \"CreationDate\": \"2023-05-30\",\n                \"Description\": \"Sales order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"1234567890\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0023478980\",\n                \"CreationDate\": \"2023-01-30\",\n                \"Description\": \"Delivery Document\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000018033\",\n                \"CreationDate\": \"2019-06-04\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"9000246099\",\n                \"CreationDate\": \"2023-01-30\",\n                \"Description\": \"Demo confrimation of service\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4901220209\",\n                \"CreationDate\": \"2019-06-14\",\n                \"Description\": \"Demo-Despatch\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0435782286\",\n                \"CreationDate\": \"2019-06-14\",\n                \"Description\": \"Demo Invoice\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            }\n        ],\n        \"ErrorMessage\": \"\"\n    }\n}"
 						}
 					]
 				}
@@ -564,7 +601,7 @@
 	],
 	"variable": [
 		{
-			"id": "f9d54feb-57d6-4c40-a928-b5465469b96a",
+			"id": "0029db49-7676-467b-be86-c5bb1e71a422",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
