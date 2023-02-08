@@ -407,6 +407,13 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66",
+								"username": "mule_basic_auth_user"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.dw4w1g-2.gbr-e1.cloudhub.io/Quotation/getHistory/20000090"
@@ -557,7 +564,7 @@
 	],
 	"variable": [
 		{
-			"id": "1b7ec7b6-f8b2-4475-92ed-d47e0813754c",
+			"id": "f9d54feb-57d6-4c40-a928-b5465469b96a",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
