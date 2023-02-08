@@ -401,7 +401,7 @@
 					]
 				},
 				{
-					"name": "Local - Get Quotation History Copy",
+					"name": "CloudHub - Get Quotation History Copy",
 					"id": "cd0bb034-7cd9-458a-813e-098882f6f7bf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -557,7 +557,7 @@
 	],
 	"variable": [
 		{
-			"id": "7f2ed033-98ef-49a9-ba56-a3ebd72a304e",
+			"id": "1b7ec7b6-f8b2-4475-92ed-d47e0813754c",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
