@@ -236,6 +236,13 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66",
+								"username": "mule_basic_auth_user"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -247,7 +254,7 @@
 								}
 							}
 						},
-						"url": "http://localhost:8081/Quotation/createQuotation"
+						"url": "https://int-3-quotation-replication-to-sapecc-lzym2p.5sc6y6-4.usa-e2.cloudhub.io/Quotation/createQuotation"
 					},
 					"response": []
 				}
@@ -594,7 +601,7 @@
 	],
 	"variable": [
 		{
-			"id": "6d766096-2cf0-42f7-9c51-70a7d025bfa2",
+			"id": "5bc02403-a8c1-48da-bf1b-ac24d2e71936",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
