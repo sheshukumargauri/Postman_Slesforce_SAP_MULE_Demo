@@ -421,7 +421,7 @@
 					"response": [
 						{
 							"id": "b027dbb1-9418-4564-bb49-e491a87da39c",
-							"name": "CloudHub - Get Quotation History Copy",
+							"name": "CloudHub - sample - Get Quotation History Copy",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -572,7 +572,7 @@
 	],
 	"variable": [
 		{
-			"id": "45c700f6-d3a2-4f95-87b9-5503f7238b07",
+			"id": "3b77a606-eea7-47dd-a834-be09dd1ca163",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
