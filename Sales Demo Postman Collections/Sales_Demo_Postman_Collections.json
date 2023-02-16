@@ -94,7 +94,7 @@
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
 								"key": "x-csrf-Token",
@@ -761,7 +761,7 @@
 	],
 	"variable": [
 		{
-			"id": "83d4cd71-18df-4b60-b03c-e1fa71b237a7",
+			"id": "91a8e6b8-21cb-4c9e-909d-2c6ba2e9352f",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
