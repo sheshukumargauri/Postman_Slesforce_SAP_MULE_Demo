@@ -134,52 +134,6 @@
 					},
 					"response": [
 						{
-							"id": "e4b0c948-ceb0-4cbd-9ff7-d49b4d93da0e",
-							"name": "cloud hub customer sync to sap ecc",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "71"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
-								},
-								{
-									"key": "x-correlation-id",
-									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
-								},
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
-						},
-						{
 							"id": "cb108ded-d358-4509-bf20-24b85116a3d2",
 							"name": "http call to sap",
 							"originalRequest": {
@@ -804,7 +758,7 @@
 	],
 	"variable": [
 		{
-			"id": "f72da41a-65ce-4120-a975-e341bb72c66c",
+			"id": "d208026a-3272-4c45-8a53-c9b05b266258",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
