@@ -92,14 +92,16 @@
 					},
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "Gauri05",
-								"username": "sguntuka"
-							}
+							"type": "noauth"
 						},
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-csrf-Token",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
@@ -110,7 +112,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust?sap-client=800",
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust/customer?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"glukds01",
@@ -122,7 +124,8 @@
 								"sap",
 								"bc",
 								"zsfdc_ecc_integ",
-								"maintain_cust"
+								"maintain_cust",
+								"customer"
 							],
 							"query": [
 								{
@@ -758,7 +761,7 @@
 	],
 	"variable": [
 		{
-			"id": "8cdd47c5-561a-4d34-8104-c41f6529eb40",
+			"id": "83d4cd71-18df-4b60-b03c-e1fa71b237a7",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
