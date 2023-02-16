@@ -83,6 +83,82 @@
 							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
 						}
 					]
+				},
+				{
+					"name": "http call to sap",
+					"id": "1a7cd175-adf3-4946-8206-d620085cb4db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+					},
+					"response": [
+						{
+							"id": "e4b0c948-ceb0-4cbd-9ff7-d49b4d93da0e",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
 				}
 			],
 			"id": "d2605912-6fe3-40c8-a060-294765a94f0b"
@@ -648,7 +724,7 @@
 	],
 	"variable": [
 		{
-			"id": "8ca317ba-9d5a-4774-8c30-049acbdf114b",
+			"id": "cd5b42ff-c6c0-4362-a368-76a639b1bf75",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
