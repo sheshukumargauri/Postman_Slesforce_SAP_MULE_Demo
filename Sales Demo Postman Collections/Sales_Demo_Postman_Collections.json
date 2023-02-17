@@ -205,7 +205,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": {
+								"password": "WhiteSun1234$",
+								"username": "sguntuka"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -225,25 +229,23 @@
 							}
 						},
 						"url": {
-							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust/customer?sap-client=800",
+							"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer?sap-client=100",
 							"protocol": "http",
 							"host": [
-								"glukds01",
+								"glukds02",
 								"gauri",
 								"com"
 							],
-							"port": "8003",
+							"port": "8002",
 							"path": [
 								"sap",
-								"bc",
 								"zsfdc_ecc_integ",
-								"maintain_cust",
 								"customer"
 							],
 							"query": [
 								{
 									"key": "sap-client",
-									"value": "800"
+									"value": "100"
 								}
 							]
 						}
@@ -874,7 +876,7 @@
 	],
 	"variable": [
 		{
-			"id": "76c0c187-ae98-4348-b0ae-6bf193c6a7de",
+			"id": "0d2de25c-63ca-41b3-a1b5-2850a4c642b5",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
