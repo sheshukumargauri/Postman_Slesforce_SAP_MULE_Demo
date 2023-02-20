@@ -85,7 +85,7 @@
 					]
 				},
 				{
-					"name": "http call to sap",
+					"name": "new http customer",
 					"id": "1a7cd175-adf3-4946-8206-d620085cb4db",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -877,7 +877,7 @@
 	],
 	"variable": [
 		{
-			"id": "e52a6d3f-7f63-4f20-ac04-b61fba76db95",
+			"id": "dbd74fdb-d193-4b4c-a7ea-50a2d4a90f1e",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
