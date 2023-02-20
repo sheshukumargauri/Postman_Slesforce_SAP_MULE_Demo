@@ -108,7 +108,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{CustomerName:\"GL\",HouseNo:\"1-2\",Street:\"Boleaward\",City:\"Llincoln\",PostCode:\"LN2 2LL\",\"Country\":\"United Kingdom\",\"TelephoneNo\":\"123455\",\"Email\":\"support@gauri.com\",\"SalesOrg\":\"UK\",\"SAPCustomerID\":\"12345\"}",
+							"raw": "{\r\n    CustomerName:\"GL\",HouseNo:\"1-2\",Street:\"Boleaward\",City:\"Llincoln\",PostCode:\"LN2 2LL\",Country:\"United Kingdom\",TelephoneNo:\"123455\",Email:\"support@gauri.com\",SalesOrg:\"UK\",SAPCustomerID:\"12345\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -881,7 +881,7 @@
 	],
 	"variable": [
 		{
-			"id": "e43e2830-284c-44b1-83bf-1bdef837c299",
+			"id": "798a5f8f-a2cb-4d5b-84ef-5ff547181e22",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
