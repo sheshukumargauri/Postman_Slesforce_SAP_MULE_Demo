@@ -219,7 +219,7 @@
 						"header": [
 							{
 								"key": "X-Requested-With",
-								"value": "",
+								"value": "true",
 								"type": "text"
 							}
 						],
@@ -999,7 +999,7 @@
 	],
 	"variable": [
 		{
-			"id": "c60bae9c-dd72-407f-a1cc-31cdcf08e7e8",
+			"id": "354834b6-7519-4031-9dd1-3be424e46097",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
