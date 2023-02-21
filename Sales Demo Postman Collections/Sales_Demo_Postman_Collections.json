@@ -209,7 +209,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": {
+								"username": "SFDC_INTEG",
+								"password": "6JnfOHM1!1mtkY*"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -995,7 +999,7 @@
 	],
 	"variable": [
 		{
-			"id": "a0d19b25-60da-464f-ba9f-743b18ceed92",
+			"id": "3e9e3685-1a1c-45ad-ad50-302992dcbf40",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
