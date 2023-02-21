@@ -211,8 +211,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "Gauri05",
-								"username": "sguntuka"
+								"username": "SFDC_INTEG",
+								"password": "6JnfOHM1!1mtkY*"
 							}
 						},
 						"method": "POST",
@@ -999,7 +999,7 @@
 	],
 	"variable": [
 		{
-			"id": "1667ca68-bb3a-46d4-8024-2d0d45a90d82",
+			"id": "ad6ad801-913d-4307-94bd-d356eb30424a",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
