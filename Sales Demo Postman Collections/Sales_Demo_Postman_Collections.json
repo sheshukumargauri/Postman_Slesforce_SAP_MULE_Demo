@@ -211,7 +211,7 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"username": "SFDC_INTEG1",
+								"username": "SFDC_INTEG123",
 								"password": "6JnfOHM1!1mtkY*"
 							}
 						},
@@ -999,7 +999,7 @@
 	],
 	"variable": [
 		{
-			"id": "c346bb6b-6347-4a5b-b098-9c56fe065c14",
+			"id": "cf6d9595-802b-4690-bc23-8ca9b664efff",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
