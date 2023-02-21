@@ -202,6 +202,124 @@
 					]
 				},
 				{
+					"name": "new http customer Copy",
+					"id": "7ea1ac3f-c133-4bd4-991a-332933788196",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    CustomerName:\"GL\",\r\n    HouseNo:\"1-2\",\r\n    Street:\"Boleaward2\",\r\n    City:\"Llincoln\",\r\n    PostCode:\"LN2 2LL\",\r\n    Country:\"United Kingdom\",\r\n    TelephoneNo:\"123455\",\r\n    Email:\"support@gauri.com\",\r\n    SalesOrg:\"UK\",\r\n    SAPCustomerID:\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/customer/maintain?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0913195b-4dda-442c-99c1-9e135c436084",
+							"name": "http call to sap",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"glukds01",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"maintain_cust"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
 					"name": "http ECD",
 					"id": "0aaa4134-5239-4d52-a7df-408c105108f4",
 					"protocolProfileBehavior": {
@@ -881,7 +999,7 @@
 	],
 	"variable": [
 		{
-			"id": "63bed490-95d7-4098-987e-2f9c5f880016",
+			"id": "1667ca68-bb3a-46d4-8024-2d0d45a90d82",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
