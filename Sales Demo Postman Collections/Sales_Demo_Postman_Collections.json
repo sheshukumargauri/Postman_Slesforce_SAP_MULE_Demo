@@ -649,11 +649,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": {
-								"password": "Gauri05asdf",
-								"username": "sguntuka"
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [
@@ -1041,7 +1037,7 @@
 	],
 	"variable": [
 		{
-			"id": "d97e4d24-ed60-4534-974e-f53bb609f221",
+			"id": "f7996594-09df-47cc-b49a-838274b8e159",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
