@@ -649,7 +649,8 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "apikey",
+							"apikey": {}
 						},
 						"method": "POST",
 						"header": [
@@ -669,7 +670,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/Create?sap-client=800",
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"glukds01",
@@ -681,7 +682,7 @@
 								"sap",
 								"bc",
 								"zsfdc_ecc_integ",
-								"quotation",
+								"Quotation",
 								"Create"
 							],
 							"query": [
@@ -1037,7 +1038,7 @@
 	],
 	"variable": [
 		{
-			"id": "f7996594-09df-47cc-b49a-838274b8e159",
+			"id": "12b4f16f-7980-4330-bbd9-7d35c118bdf4",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
