@@ -649,8 +649,11 @@
 					},
 					"request": {
 						"auth": {
-							"type": "apikey",
-							"apikey": {}
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -1038,7 +1041,7 @@
 	],
 	"variable": [
 		{
-			"id": "7ad346b3-f8c0-4f4c-b255-48710bc6f09a",
+			"id": "afd66212-f7cd-46a2-b5ea-8c8559460ddf",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
