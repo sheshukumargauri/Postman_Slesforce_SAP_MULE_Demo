@@ -581,7 +581,68 @@
 					]
 				},
 				{
-					"name": "CloudHub - sample -Replicate Quotation Copy",
+					"name": "Local-Replicate Quotation Copy",
+					"id": "030a384a-5683-40db-ab14-6a9afe505b68",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"QuoteRequest\": {\r\n        \"QuoteName\": \"GTPL Quote for salesforce\",\r\n        \"RecordType\": \"0001\",\r\n        \"CreationDate\": \"2023-01-24\",\r\n        \"ExpirationDate\": \"2023-07-23\",\r\n        \"LineItems\": [\r\n            {\r\n                \"LineNo\": \"123\",\r\n                \"ProductCode\": \"1009\",\r\n                \"ProductDescription\": \"Office 365\",\r\n                \"Quantity\": \"10\",\r\n                \"UOM\": \"EA\"\r\n            }\r\n        ],\r\n        \"partner\": [\r\n            {\r\n                \"ERPId\": \"100045\",\r\n                \"PartnerRole\": \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/Quotation/createQuotation"
+					},
+					"response": [
+						{
+							"id": "b03f3c3a-4f41-4fd0-9966-3f94d0c445e9",
+							"name": "Local-Replicate Quotation-Response-success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"QuoteRequest\": {\r\n        \"QuoteName\": \"GTPL Quote for salesforce\",\r\n        \"RecordType\": \"0001\",\r\n        \"CreationDate\": \"2023-01-24\",\r\n        \"ExpirationDate\": \"2023-07-23\",\r\n        \"LineItems\": [\r\n            {\r\n                \"LineNo\": \"123\",\r\n                \"ProductCode\": \"1009\",\r\n                \"ProductDescription\": \"Office 365\",\r\n                \"Quantity\": \"10\",\r\n                \"UOM\": \"Each\"\r\n            }\r\n        ],\r\n        \"partner\": [\r\n            {\r\n                \"ERPId\": \"100045\",\r\n                \"PartnerRole\": \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/Quotation/createQuotation"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Feb 2023 16:20:06 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQuotationId\": \"0020000092\",\n    \"ErrorMessage\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1 -",
 					"id": "0a9324d6-e80b-43b3-98bd-53d34eb4381a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -999,7 +1060,7 @@
 	],
 	"variable": [
 		{
-			"id": "354834b6-7519-4031-9dd1-3be424e46097",
+			"id": "1ff33cc3-4bb1-4261-a1e7-4a9f377323ca",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
