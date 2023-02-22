@@ -651,8 +651,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66",
-								"username": "mule_basic_auth_user"
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
 							}
 						},
 						"method": "POST",
@@ -666,7 +666,29 @@
 								}
 							}
 						},
-						"url": "https://int-3-quotation-replication-to-sapecc-lzym2p.5sc6y6-4.usa-e2.cloudhub.io/Quotation/createQuotation"
+						"url": {
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/Create?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"glukds01",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -1013,7 +1035,7 @@
 	],
 	"variable": [
 		{
-			"id": "eba973f5-4956-40ba-b7cb-04a0ef585afd",
+			"id": "6832f7e2-b8e7-4d2f-8acb-d95590ac7833",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
