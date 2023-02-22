@@ -142,7 +142,7 @@
 					"response": [
 						{
 							"id": "cb108ded-d358-4509-bf20-24b85116a3d2",
-							"name": "http call to sap",
+							"name": "ET1",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1041,7 +1041,7 @@
 	],
 	"variable": [
 		{
-			"id": "dd43d4fd-ea08-4b29-acf8-034bbe89b7c2",
+			"id": "7ef66e88-c1df-41af-b492-80ca8a59d912",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
