@@ -656,7 +656,13 @@
 							}
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"QuoteRequest\": {\r\n        \"QuoteName\": \"GTPL Quote for salesforce\",\r\n        \"RecordType\": \"0001\",\r\n        \"CreationDate\": \"2023-01-24\",\r\n        \"ExpirationDate\": \"2023-07-23\",\r\n        \"LineItems\": [\r\n            {\r\n                \"LineNo\": \"123\",\r\n                \"ProductCode\": \"1009\",\r\n                \"ProductDescription\": \"Office 365\",\r\n                \"Quantity\": \"10\",\r\n                \"UOM\": \"EA\"\r\n            }\r\n        ],\r\n        \"partner\": [\r\n            {\r\n                \"ERPId\": \"100045\",\r\n                \"PartnerRole\": \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
@@ -1035,7 +1041,7 @@
 	],
 	"variable": [
 		{
-			"id": "d3151f42-06c2-4bc8-8a0c-5dfca2b89bcd",
+			"id": "a7ad691a-16ed-40ce-b05b-2e4dec992c06",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
