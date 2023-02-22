@@ -651,8 +651,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "{{SAP_ET1_PASSWORD}}",
-								"username": "{{SAP_ET1_USER}}"
+								"password": "Gauri05",
+								"username": "sguntuka"
 							}
 						},
 						"method": "POST",
@@ -1041,7 +1041,7 @@
 	],
 	"variable": [
 		{
-			"id": "eb3e5ff4-7ccd-4ec7-acb5-9c5460d1406c",
+			"id": "46050556-85e0-45a2-9961-21dc0fd0075d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
