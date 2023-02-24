@@ -665,6 +665,150 @@
 					]
 				},
 				{
+					"name": "ET1 Copy",
+					"id": "4a76afeb-0da0-4878-858e-ece112b1c0d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"100045\",\r\n   \"PriceDate\":\"2023-01-23\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"1009\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a687a7c4-fa83-4eb6-8d57-f51c18939040",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Price"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										},
+										{
+											"key": "X-Requested-With",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "sap-usercontext=sap-client=800; path=/"
+								},
+								{
+									"key": "set-cookie",
+									"value": "MYSAPSSO2=AjQxMDMBABhTAEYARABDAF8ASQBOAFQARQBHACAAIAACAAY4ADAAMAADABBFAFQAMQAgACAAIAAgACAABAAYMgAwADIAMwAwADIAMgA0ADEAMQAzADUABQAEAAAACAYAAlgACQACRQD%2fAVUwggFRBgkqhkiG9w0BBwKgggFCMIIBPgIBATELMAkGBSsOAwIaBQAwCwYJKoZIhvcNAQcBMYIBHTCCARkCAQEwbzBkMQswCQYDVQQGEwJERTEcMBoGA1UEChMTU0FQIFRydXN0IENvbW11bml0eTETMBEGA1UECxMKU0FQIFdlYiBBUzEUMBIGA1UECxMLSTAxMjAwMDM0MTExDDAKBgNVBAMTA0lEMwIHIBEIGBMgRzAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwMjI0MTEzNTIzWjAjBgkqhkiG9w0BCQQxFgQUgtBM6qEvqLIWaSGz2D18GWvBw60wCQYHKoZIzjgEAwQuMCwCFFGX1nxDcYjIc4BygTwV551L5H3xAhRA0uTEXXPCk%21UMaozf8I6vcdx9rw%3d%3d; path=/; domain=.sap.gauri.com"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "67"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"ITEMS\": [\n        {\n            \"PRODUCTCODE\": \"1009\",\n            \"QUANTITY\": 1,\n            \"LISTPRICE\": 13.67\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
 					"name": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
 					"id": "b9c94122-e84d-47ac-958d-dd095fbaff78",
 					"protocolProfileBehavior": {
@@ -1332,7 +1476,7 @@
 	],
 	"variable": [
 		{
-			"id": "32dab02b-cec3-48ce-b79e-20c027631af6",
+			"id": "40bdce65-c9da-4b14-924b-d69a9e2e1b75",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
