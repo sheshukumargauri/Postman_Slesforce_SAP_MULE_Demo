@@ -492,7 +492,7 @@
 			"name": "Get Pricing Details",
 			"item": [
 				{
-					"name": "Local",
+					"name": "Mule - Local",
 					"id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1126,7 +1126,7 @@
 	],
 	"variable": [
 		{
-			"id": "a2b2ea17-42de-483f-8170-c86155563a84",
+			"id": "a8b5ac65-53b6-4f89-a600-94ead89ecc62",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
