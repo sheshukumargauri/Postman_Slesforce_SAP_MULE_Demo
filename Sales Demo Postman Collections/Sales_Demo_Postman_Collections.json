@@ -1498,8 +1498,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66",
-								"username": "mule_basic_auth_user"
+								"password": "Gauri05",
+								"username": "sguntuka"
 							}
 						},
 						"method": "GET",
@@ -1685,7 +1685,7 @@
 	],
 	"variable": [
 		{
-			"id": "c9f55711-6a0c-4a2b-80b1-5f9063194f61",
+			"id": "23359a62-167a-4f11-b0b2-d01c796b499d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
