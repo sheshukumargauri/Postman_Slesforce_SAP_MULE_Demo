@@ -1505,7 +1505,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation?sap-client=800",
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/history?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"support",
@@ -1518,7 +1518,8 @@
 								"sap",
 								"bc",
 								"zsfdc_ecc_integ",
-								"quotation"
+								"quotation",
+								"history"
 							],
 							"query": [
 								{
@@ -1682,7 +1683,7 @@
 	],
 	"variable": [
 		{
-			"id": "f8bed903-9186-48af-b340-faa2606bb2bc",
+			"id": "28213450-53a1-487f-ae71-73c1210965d9",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
