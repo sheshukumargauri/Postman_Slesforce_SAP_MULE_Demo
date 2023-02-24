@@ -543,7 +543,7 @@
 					"response": []
 				},
 				{
-					"name": "Local Copy",
+					"name": "ET1",
 					"id": "eff81ffa-882a-4522-8b1a-f95856a3430a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1148,7 +1148,7 @@
 	],
 	"variable": [
 		{
-			"id": "29cbbc3f-d325-42a2-8fa4-b2d03db96fc9",
+			"id": "c2a1c039-5c4e-450a-bbea-4c27ceb3cb2e",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
