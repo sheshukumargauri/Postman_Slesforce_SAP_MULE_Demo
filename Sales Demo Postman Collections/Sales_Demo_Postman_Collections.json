@@ -783,6 +783,64 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "ET1 - Copy",
+					"id": "68fcd376-6a79-455f-88b0-494726451778",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    QuoteRequest: {\r\n        QuoteName: \"GTPL Quote for salesforce\",\r\n        RecordType: \"0001\",\r\n        CreationDate:  \"2023-02-23\",\r\n        ExpirationDate: \"2023-07-23\",\r\n        LineItems: [\r\n            {\r\n                LineNo: \"123\",\r\n                ProductCode: \"1009\",\r\n                ProductDescription: \"Office 365\",\r\n                Quantity: \"10\",\r\n                UOM: \"EA\"\r\n            }\r\n        ],\r\n        partnerS: [\r\n            {\r\n                ERPId: \"100045\",\r\n                PartnerRole: \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
@@ -1127,7 +1185,7 @@
 	],
 	"variable": [
 		{
-			"id": "b2f30df4-97b4-4657-84ee-8b5f0721e139",
+			"id": "3b063c23-6331-41af-95b6-11ef3208e6ec",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
