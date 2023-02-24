@@ -543,7 +543,33 @@
 					"response": []
 				}
 			],
-			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78"
+			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78",
+			"auth": {
+				"type": "basic",
+				"basic": {}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cc4fe53-7519-4991-9679-d145622dfd90",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4cffb1ae-0ee3-47d6-aaad-5a48e49da3b7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "Quotation Replication",
@@ -1071,7 +1097,7 @@
 	],
 	"variable": [
 		{
-			"id": "afa3a017-e8ec-41ad-914c-7846b06c9fc7",
+			"id": "601a1bc6-81f2-4d92-9574-35f1f10638a0",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
