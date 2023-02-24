@@ -973,6 +973,13 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
@@ -1181,7 +1188,7 @@
 	],
 	"variable": [
 		{
-			"id": "4907d43d-5875-4d54-a6cf-74e2ec5e5461",
+			"id": "6eed80fe-8557-41a0-91b8-7e9b6fc29c8d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
