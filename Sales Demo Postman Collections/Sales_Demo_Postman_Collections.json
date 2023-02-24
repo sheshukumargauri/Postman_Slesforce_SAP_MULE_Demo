@@ -535,7 +535,13 @@
 							}
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "      \r\n{\r\n  \"Recordtype\": \"TA\",\r\n  \"Country\": \"GB\",\r\n  \"CustomerId\": \"100045\",\r\n   \"PriceDate\":\"20230123\",\r\n  \"Items\": [\r\n    {\r\n      \"ProductCode\": \"1009\",\r\n      \"Quantity\": \"1\",\r\n      \"UOM\": \"EA\"\r\n    }\r\n  ]\r\n}",
@@ -546,7 +552,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800&X-Requested-With=true",
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"support",
@@ -570,7 +576,7 @@
 								{
 									"key": "X-Requested-With",
 									"value": "true",
-									"type": "text"
+									"disabled": true
 								}
 							]
 						}
@@ -1190,7 +1196,7 @@
 	],
 	"variable": [
 		{
-			"id": "ccc03525-ef7f-445c-9169-fad71e79fb6a",
+			"id": "95fb1ddc-8fde-4118-81e7-c902c852d88d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
