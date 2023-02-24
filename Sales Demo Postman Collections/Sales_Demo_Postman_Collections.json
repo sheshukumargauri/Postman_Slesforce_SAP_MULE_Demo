@@ -967,6 +967,49 @@
 					]
 				},
 				{
+					"name": "ET1",
+					"id": "0fcef344-a316-4f27-a448-2d55b6efd3cd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+					},
+					"response": [
+						{
+							"id": "3c506cd2-aabb-4aae-b3f0-1e8d568a587f",
+							"name": "Local - Get Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1306"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Jan 2023 14:32:08 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0020000090\",\n                \"CreationDate\": \"2023-01-26Z\",\n                \"Description\": \"Quotation\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000014894\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"0020000090\"\n            },\n            {\n                \"DocumentStatus\": \"Being processed\",\n                \"CurrentDocumentNumber\": \"0080017354\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Delivery\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0000014894\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"20230127\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4900000000\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"GD goods issue:delvy\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "CloudHub - sample - Get Quotation History Copy",
 					"id": "cd0bb034-7cd9-458a-813e-098882f6f7bf",
 					"protocolProfileBehavior": {
@@ -1138,7 +1181,7 @@
 	],
 	"variable": [
 		{
-			"id": "d57f6d2c-6585-4868-b8be-d4aa34b1f598",
+			"id": "2f0a199b-8710-4af3-8cb5-4f1b3c2e0c63",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
