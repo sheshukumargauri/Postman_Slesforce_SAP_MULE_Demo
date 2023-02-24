@@ -1084,7 +1084,7 @@
 					"response": []
 				},
 				{
-					"name": "ET1 - Double Quoters#",
+					"name": "ET1 - Double Quotes",
 					"id": "6c5f3ff7-aa7b-465f-b3a2-61985dd050f1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1534,7 +1534,7 @@
 	],
 	"variable": [
 		{
-			"id": "b6a86d19-5014-4905-9d9d-1216481cfd9a",
+			"id": "8d6beab7-35fb-4b9c-8518-5499211dc787",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
