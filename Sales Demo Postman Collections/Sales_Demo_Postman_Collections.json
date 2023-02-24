@@ -498,6 +498,13 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -510,7 +517,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation?sap-client=800",
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/Price?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"glukds01",
@@ -522,7 +529,8 @@
 								"sap",
 								"bc",
 								"zsfdc_ecc_integ",
-								"quotation"
+								"quotation",
+								"Price"
 							],
 							"query": [
 								{
@@ -1063,7 +1071,7 @@
 	],
 	"variable": [
 		{
-			"id": "0f3ee2c6-24ab-4d9d-94ba-cf0f0be62820",
+			"id": "c1ed917e-ce54-4d29-9ce5-05dd77861309",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
