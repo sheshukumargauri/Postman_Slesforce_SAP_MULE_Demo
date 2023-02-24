@@ -492,7 +492,7 @@
 			"name": "Get Pricing Details",
 			"item": [
 				{
-					"name": "ET1",
+					"name": "Local",
 					"id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1097,7 +1097,7 @@
 	],
 	"variable": [
 		{
-			"id": "414e169a-76e0-465f-80a2-7884e434d142",
+			"id": "0fe506ad-dbe6-4f44-8e03-646935ae721d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
