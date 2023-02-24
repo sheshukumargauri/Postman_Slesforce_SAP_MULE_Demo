@@ -541,6 +541,57 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Local Copy",
+					"id": "eff81ffa-882a-4522-8b1a-f95856a3430a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      \r\n{\r\n  \"Recordtype\": \"TA\",\r\n  \"Country\": \"GB\",\r\n  \"CustomerId\": \"100045\",\r\n   \"PriceDate\":\"20230123\",\r\n  \"Items\": [\r\n    {\r\n      \"ProductCode\": \"1009\",\r\n      \"Quantity\": \"1\",\r\n      \"UOM\": \"EA\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"glukds01",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78",
@@ -1097,7 +1148,7 @@
 	],
 	"variable": [
 		{
-			"id": "fb3f7610-8923-4d5a-a568-928fe45d2cf8",
+			"id": "29cbbc3f-d325-42a2-8fa4-b2d03db96fc9",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
