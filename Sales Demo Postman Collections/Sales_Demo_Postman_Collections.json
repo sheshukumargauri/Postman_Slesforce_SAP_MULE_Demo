@@ -94,8 +94,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "Gauri05",
-								"username": "sguntuka"
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
 							}
 						},
 						"method": "POST",
@@ -108,7 +108,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"CustomerName\":\"GL\",\r\n    \"HouseNo\":\"1-2\",\r\n    \"Street\":\"Boleaward2\",\r\n    \"City\":\"Llincoln\",\r\n    \"PostCode\":\"LN2 2LL\",\r\n    \"Country\":\"United Kingdom\",\r\n    \"TelephoneNo\":\"123455\",\r\n    \"Email\":\"support@gauri.com\",\r\n    \"SalesOrg\":\"UK\",\r\n    \"SAPCustomerID\":\"\"}",
+							"raw": "{\r\n    \"CustomerName\":\"GL234\",\r\n    \"HouseNo\":\"1-2\",\r\n    \"Street\":\"Boleaward2\",\r\n    \"City\":\"Llincoln\",\r\n    \"PostCode\":\"LN2 2LL\",\r\n    \"Country\":\"United Kingdom\",\r\n    \"TelephoneNo\":\"123455\",\r\n    \"Email\":\"support@gauri.com\",\r\n    \"SalesOrg\":\"UK\",\r\n    \"SAPCustomerID\":\"\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1332,7 +1332,7 @@
 	],
 	"variable": [
 		{
-			"id": "2ae017e1-801e-42f1-864f-0ddaf8bfd6cc",
+			"id": "32dab02b-cec3-48ce-b79e-20c027631af6",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
