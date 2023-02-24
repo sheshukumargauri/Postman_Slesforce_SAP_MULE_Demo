@@ -663,6 +663,69 @@
 							"body": "{\n    \"ITEMS\": [\n        {\n            \"PRODUCTCODE\": \"1009\",\n            \"QUANTITY\": 1,\n            \"LISTPRICE\": 13.67\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+					"id": "b9c94122-e84d-47ac-958d-dd095fbaff78",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78",
@@ -1269,7 +1332,7 @@
 	],
 	"variable": [
 		{
-			"id": "d8b48446-ed3d-43b5-8583-50ca24edf2ec",
+			"id": "b37f63e6-741f-4c20-b237-f0ace7ec7c74",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
