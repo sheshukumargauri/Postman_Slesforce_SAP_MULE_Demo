@@ -516,29 +516,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/Price?sap-client=800",
-							"protocol": "http",
-							"host": [
-								"glukds01",
-								"gauri",
-								"com"
-							],
-							"port": "8003",
-							"path": [
-								"sap",
-								"bc",
-								"zsfdc_ecc_integ",
-								"quotation",
-								"Price"
-							],
-							"query": [
-								{
-									"key": "sap-client",
-									"value": "800"
-								}
-							]
-						}
+						"url": "http://localhost:8081/Price/fetchPrice"
 					},
 					"response": []
 				},
@@ -1148,7 +1126,7 @@
 	],
 	"variable": [
 		{
-			"id": "f6d5f658-c5e6-40b5-bc46-2a19858d49cd",
+			"id": "a2b2ea17-42de-483f-8170-c86155563a84",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
