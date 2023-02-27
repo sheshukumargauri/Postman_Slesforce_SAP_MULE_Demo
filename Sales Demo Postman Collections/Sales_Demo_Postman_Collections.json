@@ -1533,7 +1533,72 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "0bb66e45-cb07-4c02-b3a0-935c1dbccdb7",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=800&id=20000090",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"History"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										},
+										{
+											"key": "id",
+											"value": "20000090"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "sap-usercontext=sap-client=800; path=/"
+								},
+								{
+									"key": "set-cookie",
+									"value": "MYSAPSSO2=AjQxMDMBABhTAEcAVQBOAFQAVQBLAEEAIAAgACAAIAACAAY4ADAAMAADABBFAFQAMQAgACAAIAAgACAABAAYMgAwADIAMwAwADIAMgA3ADAAOQAyADIABQAEAAAACAYAAlgACQACRQD%2fAVYwggFSBgkqhkiG9w0BBwKgggFDMIIBPwIBATELMAkGBSsOAwIaBQAwCwYJKoZIhvcNAQcBMYIBHjCCARoCAQEwbzBkMQswCQYDVQQGEwJERTEcMBoGA1UEChMTU0FQIFRydXN0IENvbW11bml0eTETMBEGA1UECxMKU0FQIFdlYiBBUzEUMBIGA1UECxMLSTAxMjAwMDM0MTExDDAKBgNVBAMTA0lEMwIHIBEIGBMgRzAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwMjI3MDkyMjQ0WjAjBgkqhkiG9w0BCQQxFgQUtReSGBdEyPCLoLMckFIqhK1qR0EwCQYHKoZIzjgEAwQvMC0CFQCCIa2ENsM6MyjlKW3JsPMM3%21AtNAIUNkUb4mXbg6tpJcG5Uj11IBDVkfM%3d; path=/; domain=.sap.gauri.com"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "893"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QUOTEDOCUMENTFLOW\": {\n        \"QUOTEDOCUMENTS\": [\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0020000090\",\n                \"CREATIONDATE\": \"20230126\",\n                \"DESCRIPTION\": \"Quotation\",\n                \"LEVEL\": 0,\n                \"PRECEDINGDOCUMENTNUMBER\": \"\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0000014894\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Order\",\n                \"LEVEL\": 1,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0020000090\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Being processed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0080017354\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Delivery\",\n                \"LEVEL\": 2,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0000014894\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"20230127\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Picking request\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080017354\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"4900000000\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"GD goods issue:delvy\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080017354\"\n            }\n        ]\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
@@ -1649,7 +1714,7 @@
 	],
 	"variable": [
 		{
-			"id": "51715634-9296-4500-984f-ef3f55d07190",
+			"id": "7e009ba5-2bec-46db-b736-352838cf7749",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
