@@ -434,6 +434,122 @@
 							"body": null
 						}
 					]
+				},
+				{
+					"name": "http ECD",
+					"id": "9c24687c-86db-487e-9881-ed48cfbae7dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "WhiteSun1234$",
+								"username": "sguntuka"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\"CustomerName\":\"GL\",\"HouseNo\":\"1-2\",\"Street\":\"Boleaward\",\"City\":\"Llincoln\",\"PostCode\":\"LN2 2LL\",\"Country\":\"United Kingdom\",\"TelephoneNo\":\"123455\",\"Email\":\"support@gauri.com\",\"SalesOrg\":\"UK\",\"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer/maintain?sap-client=100",
+							"protocol": "http",
+							"host": [
+								"glukds02",
+								"gauri",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"sap",
+								"zsfdc_ecc_integ",
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "83becfa8-3f03-47fa-a69c-3153607a26e4",
+							"name": "http call to sap",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer/maintain?sap-client=100",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"zsfdc_ecc_integ",
+										"customer",
+										"maintain"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
 				}
 			],
 			"id": "d2605912-6fe3-40c8-a060-294765a94f0b"
@@ -1836,7 +1952,7 @@
 	],
 	"variable": [
 		{
-			"id": "77b402d9-0a10-4a21-8b7e-a7670c83fb55",
+			"id": "bcf5cf07-08fa-46fc-ab07-b829070bb17e",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
