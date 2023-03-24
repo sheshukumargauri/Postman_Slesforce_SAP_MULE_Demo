@@ -449,11 +449,11 @@
 								"username": "sguntuka"
 							}
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "X-CSRF-Token",
-								"value": "fetch",
+								"value": "gSaYB7Fa8ZBbYA3tTilldw==",
 								"type": "text"
 							}
 						],
@@ -1952,7 +1952,7 @@
 	],
 	"variable": [
 		{
-			"id": "c69f622e-b3c6-4444-be3a-9e092e2bfed4",
+			"id": "fba7c314-048d-4df0-8b6a-efdb96238c35",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
