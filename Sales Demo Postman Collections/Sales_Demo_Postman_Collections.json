@@ -390,24 +390,24 @@
 									}
 								},
 								"url": {
-									"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust?sap-client=800",
+									"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer/maintain?sap-client=100",
 									"protocol": "http",
 									"host": [
-										"glukds01",
+										"glukds02",
 										"gauri",
 										"com"
 									],
-									"port": "8003",
+									"port": "8002",
 									"path": [
 										"sap",
-										"bc",
 										"zsfdc_ecc_integ",
-										"maintain_cust"
+										"customer",
+										"maintain"
 									],
 									"query": [
 										{
 											"key": "sap-client",
-											"value": "800"
+											"value": "100"
 										}
 									]
 								}
@@ -1836,7 +1836,7 @@
 	],
 	"variable": [
 		{
-			"id": "ef69236f-7d20-471e-a6f7-ff3e92f6af52",
+			"id": "35bfed91-b6ea-4061-8ac5-fa0c1306a75a",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
