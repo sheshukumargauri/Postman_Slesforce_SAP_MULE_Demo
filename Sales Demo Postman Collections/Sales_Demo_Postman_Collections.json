@@ -378,7 +378,7 @@
 							"id": "942f68a7-09b2-42e6-8f68-e6e25af85202",
 							"name": "http call to sap",
 							"originalRequest": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -1836,7 +1836,7 @@
 	],
 	"variable": [
 		{
-			"id": "35bfed91-b6ea-4061-8ac5-fa0c1306a75a",
+			"id": "1ea3843b-1cb2-4b90-b5ab-f3cdacfd04be",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
