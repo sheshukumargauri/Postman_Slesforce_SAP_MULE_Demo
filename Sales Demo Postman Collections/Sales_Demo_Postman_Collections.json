@@ -329,7 +329,7 @@
 								"exec": [
 									"pm.globals.set(\"xcrfToken\",\"test\");\r",
 									"console.log(pm.globals.get(\"xcrfToken\"));\r",
-									"pm.response.headers(\"x-csrf-token\")\r",
+									"pm.response.headers(\"x-csrf-token\");\r",
 									"\r",
 									"\r",
 									"const context = pm.environment.name ? pm.environment : pm.collectionVariables;\r",
@@ -2116,7 +2116,7 @@
 	],
 	"variable": [
 		{
-			"id": "1ca8a493-d087-4101-9cc5-c84d875ca39e",
+			"id": "49e6cdf4-d904-4bee-ba86-c073c541479d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
