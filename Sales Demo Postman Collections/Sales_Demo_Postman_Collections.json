@@ -334,7 +334,7 @@
 									"//pm.response.headers(\"x-csrf-token\");\r",
 									"\r",
 									"//context.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
-									"pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
+									"//pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
 									"//console.log(pm.response.headers.get(\"x-csrf-token\"));\r",
 									"\r",
 									"/*\r",
@@ -2123,7 +2123,7 @@
 	],
 	"variable": [
 		{
-			"id": "6242cd05-fe6e-4680-bd51-f782e8f30e7e",
+			"id": "7f16139d-58a2-4429-ba79-455c78afea64",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
