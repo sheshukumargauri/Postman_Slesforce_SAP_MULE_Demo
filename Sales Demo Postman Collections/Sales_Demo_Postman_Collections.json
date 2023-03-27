@@ -2173,8 +2173,7 @@
 								},
 								{
 									"key": "sap-language",
-									"value": "EN",
-									"type": "text"
+									"value": "EN"
 								}
 							]
 						}
@@ -2295,7 +2294,7 @@
 	],
 	"variable": [
 		{
-			"id": "271759bd-f160-4221-9beb-ed2b3a6c3dd6",
+			"id": "f280fd48-5571-4b96-a6c9-c2950c6b1486",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
