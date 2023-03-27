@@ -972,7 +972,8 @@
 								"exec": [
 									"var moment = require('moment');\r",
 									"\r",
-									"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+									"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\"));\r",
+									"console()"
 								],
 								"type": "text/javascript"
 							}
@@ -2451,7 +2452,7 @@
 	],
 	"variable": [
 		{
-			"id": "03d00cb0-3f85-4d17-8be8-56e0b42db8de",
+			"id": "6a54c1d8-bb87-48d5-944a-e688b0faa5cf",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
