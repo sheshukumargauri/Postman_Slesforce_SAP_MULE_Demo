@@ -1001,7 +1001,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":\"2023-03-20\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"10\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":{{currentdate}},\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"10\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2452,7 +2452,7 @@
 	],
 	"variable": [
 		{
-			"id": "4d6ebd44-bbb8-4c9b-9826-4bec3c3f56e8",
+			"id": "bc537f28-f7af-4383-b420-24addfaa3f22",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
