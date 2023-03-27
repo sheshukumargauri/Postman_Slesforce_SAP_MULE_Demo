@@ -492,7 +492,7 @@
 					"response": [
 						{
 							"id": "83becfa8-3f03-47fa-a69c-3153607a26e4",
-							"name": "http call to sap",
+							"name": "Customer Creation",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -2096,7 +2096,7 @@
 	],
 	"variable": [
 		{
-			"id": "61c23965-fe1c-433f-8023-2558b16abaeb",
+			"id": "190d1a88-4693-44a4-85eb-c319e7b48bb8",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
