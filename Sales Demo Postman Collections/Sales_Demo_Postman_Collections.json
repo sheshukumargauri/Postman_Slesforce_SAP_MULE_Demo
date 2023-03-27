@@ -480,7 +480,7 @@
 						"header": [
 							{
 								"key": "X-CSRF-Token",
-								"value": "Nu02B_wQFZqnfAZhaCYD6Q==",
+								"value": "{{xcsrfToken}}",
 								"type": "text"
 							}
 						],
@@ -2123,7 +2123,7 @@
 	],
 	"variable": [
 		{
-			"id": "410f9d5c-ea22-4617-ac91-c86ff59ab3fd",
+			"id": "3ae6171e-21f1-40fb-9462-b028aebb6c6d",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
