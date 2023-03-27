@@ -453,7 +453,7 @@
 						"header": [
 							{
 								"key": "X-CSRF-Token",
-								"value": "gSaYB7Fa8ZBbYA3tTilldw==",
+								"value": "Nu02B_wQFZqnfAZhaCYD6Q==",
 								"type": "text"
 							}
 						],
@@ -2096,7 +2096,7 @@
 	],
 	"variable": [
 		{
-			"id": "8d3f6561-2f23-4583-97df-6841668c4cb0",
+			"id": "1cb8bbfe-2262-4e74-95b5-85b577c1c642",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
