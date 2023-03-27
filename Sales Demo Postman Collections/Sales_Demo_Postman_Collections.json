@@ -2151,7 +2151,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=800&id=80000034",
+							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"glukds02",
@@ -2170,10 +2170,6 @@
 								{
 									"key": "sap-client",
 									"value": "800"
-								},
-								{
-									"key": "id",
-									"value": "80000034"
 								}
 							]
 						}
@@ -2294,7 +2290,7 @@
 	],
 	"variable": [
 		{
-			"id": "6f2d8f53-20e3-4132-a6ae-fba92e53bfea",
+			"id": "254f3b35-d5c6-4aff-831f-558e8ab52472",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
