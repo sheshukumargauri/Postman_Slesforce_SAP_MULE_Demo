@@ -1402,7 +1402,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://support.sap.gauri.com:8003/NGD/Quotation/Create?sap-client=800",
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"support",
@@ -1412,7 +1412,9 @@
 							],
 							"port": "8003",
 							"path": [
-								"NGD",
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
 								"Quotation",
 								"Create"
 							],
@@ -2178,7 +2180,7 @@
 	],
 	"variable": [
 		{
-			"id": "9b161d33-a3d0-4625-b86b-c291a44bc82b",
+			"id": "269280c1-6060-4661-9368-acf807ec3773",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
