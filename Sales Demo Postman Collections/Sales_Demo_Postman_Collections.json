@@ -1646,7 +1646,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"20\",\r\n            \"ProductCode\":\"2168\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"30\",\r\n            \"ProductCode\":\"2169\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"20\",\r\n            \"ProductCode\":\"2168\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"30\",\r\n            \"ProductCode\":\"2169\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2181,7 +2181,7 @@
 	],
 	"variable": [
 		{
-			"id": "eb348f67-9ee9-4109-9ad7-7dfc285cbf25",
+			"id": "eabfae8e-2782-4f3f-b78a-68c3a06950a6",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
