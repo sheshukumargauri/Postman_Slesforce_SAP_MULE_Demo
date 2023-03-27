@@ -2390,7 +2390,13 @@
 					}
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "fetch",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/requesttoken/fetch?sap-client=100",
 					"protocol": "http",
@@ -2420,7 +2426,7 @@
 	],
 	"variable": [
 		{
-			"id": "2db180b2-594e-4443-a739-9fc125837512",
+			"id": "788cd539-d60c-4a79-acbd-41b22728bd07",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
