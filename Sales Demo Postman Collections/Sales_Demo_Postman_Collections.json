@@ -1621,6 +1621,132 @@
 							"body": "{\n    \"SAPQUOTATIONID\": \"0020000106\",\n    \"ERRORMESSAGES\": []\n}"
 						}
 					]
+				},
+				{
+					"name": "ECD Multi Items",
+					"id": "f21b070f-9c9c-4c20-91e9-b0c91c27e922",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"20\",\r\n            \"ProductCode\":\"2168\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"30\",\r\n            \"ProductCode\":\"2169\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c454d7cb-63f4-4794-9887-de723c5a3fed",
+							"name": "ET1 - Double Quotes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Create"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "50"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQUOTATIONID\": \"0020000106\",\n    \"ERRORMESSAGES\": []\n}"
+						}
+					]
 				}
 			],
 			"id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
@@ -2123,7 +2249,7 @@
 	],
 	"variable": [
 		{
-			"id": "f8df945f-64df-4cbd-90ea-ea5b8915aa8c",
+			"id": "f3bd1e3d-b383-45fa-b470-f41cc5a77dfc",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
