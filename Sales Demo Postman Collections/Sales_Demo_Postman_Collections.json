@@ -334,7 +334,12 @@
 									"context.pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
 									"console.log(pm.response.headers.get(\"x-csrf-token\"));\r",
 									"\r",
-									""
+									"/*\r",
+									"const context = pm.environment.name ? pm.environment : pm.collectionVariables;\r",
+									"\r",
+									"const response = JSON.parse(pm.response.text())\r",
+									"context.set(\"_jobId\", response.id);\r",
+									"*/"
 								],
 								"type": "text/javascript"
 							}
@@ -2115,7 +2120,7 @@
 	],
 	"variable": [
 		{
-			"id": "d581e40c-d898-4aae-ba4a-c3a36459060f",
+			"id": "f214993a-8e09-42b6-b843-fcd45f050737",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
