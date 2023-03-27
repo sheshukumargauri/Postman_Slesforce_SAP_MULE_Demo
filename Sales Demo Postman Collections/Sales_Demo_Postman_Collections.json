@@ -325,10 +325,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "014ae0da-73f3-4bdb-a25f-c42adbeda2dc",
+								"id": "932b0260-c446-4938-ab8b-65013408c977",
 								"exec": [
 									"pm.globals.set(\"xcrfToken\",\"test\");\r",
-									"console.log(pm.globals.get(\"xcrfToken\"));"
+									"console.log(pm.globals.get(\"xcrfToken\"));\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -2109,7 +2110,7 @@
 	],
 	"variable": [
 		{
-			"id": "8cd6c0e4-6466-439b-a403-e7ed2e137145",
+			"id": "3d66ff6c-83eb-4530-a7bb-3342e1025655",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
