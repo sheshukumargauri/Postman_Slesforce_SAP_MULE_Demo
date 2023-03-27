@@ -321,6 +321,18 @@
 				},
 				{
 					"name": "http ECD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "014ae0da-73f3-4bdb-a25f-c42adbeda2dc",
+								"exec": [
+									"pm.globals.set(\"xcrfToken\",\"test\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "0aaa4134-5239-4d52-a7df-408c105108f4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2096,7 +2108,7 @@
 	],
 	"variable": [
 		{
-			"id": "1cb8bbfe-2262-4e74-95b5-85b577c1c642",
+			"id": "180b4346-93d5-4418-a6b5-64d01e8905d1",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
