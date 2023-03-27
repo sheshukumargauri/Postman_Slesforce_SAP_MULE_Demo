@@ -2362,11 +2362,23 @@
 					"body": null
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"id": "c086c5b7-8c31-4354-9c32-d00c8a25b0c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "61809173-b03a-438a-816b-24634bc613dd",
+			"id": "e1dd457a-23ac-4769-99aa-188e36b6733c",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
