@@ -327,7 +327,8 @@
 							"script": {
 								"id": "014ae0da-73f3-4bdb-a25f-c42adbeda2dc",
 								"exec": [
-									"pm.globals.set(\"xcrfToken\",\"test\");"
+									"pm.globals.set(\"xcrfToken\",\"test\");\r",
+									"console.log(\"xcrfToken\");"
 								],
 								"type": "text/javascript"
 							}
@@ -2108,7 +2109,7 @@
 	],
 	"variable": [
 		{
-			"id": "b0bf4421-41f3-4f11-9aee-e7d319994c56",
+			"id": "45bc8a0c-c8fd-4566-87d2-02898c1c8c40",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
