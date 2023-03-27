@@ -2374,11 +2374,23 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "e8336c95-91f5-4c3e-b077-b52838e87c0a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "e1dd457a-23ac-4769-99aa-188e36b6733c",
+			"id": "0edb2be5-3615-4e9c-8dc4-b15fd5559309",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
