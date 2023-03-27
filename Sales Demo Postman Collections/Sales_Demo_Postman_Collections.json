@@ -331,6 +331,7 @@
 									"console.log(pm.globals.get(\"xcrfToken\"));\r",
 									"//pm.response.headers(\"x-csrf-token\");\r",
 									"\r",
+									"context.pm.globals.set(\"xcsrfToken\")\r",
 									"console.log(pm.response.headers.get(\"x-csrf-token\"));\r",
 									"\r",
 									""
@@ -2114,7 +2115,7 @@
 	],
 	"variable": [
 		{
-			"id": "bffdb263-22e2-4f2b-bb2e-70f18834b822",
+			"id": "c82a0379-ffed-4495-a223-0b4404ab76c1",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
