@@ -1632,8 +1632,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "Gauri05",
-								"username": "sguntuka"
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
 							}
 						},
 						"method": "POST",
@@ -2181,7 +2181,7 @@
 	],
 	"variable": [
 		{
-			"id": "a1b98930-1c3c-4bfc-99c6-0c1042504efb",
+			"id": "39acd698-d6b9-42c3-bc1b-b98ea40043dc",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
