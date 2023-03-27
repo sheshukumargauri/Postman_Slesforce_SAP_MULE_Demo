@@ -1402,7 +1402,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://support.sap.gauri.com:8003/ngd/Quotation/Create?sap-client=800",
+							"raw": "http://support.sap.gauri.com:8003/NGD/Quotation/Create?sap-client=800",
 							"protocol": "http",
 							"host": [
 								"support",
@@ -1412,7 +1412,7 @@
 							],
 							"port": "8003",
 							"path": [
-								"ngd",
+								"NGD",
 								"Quotation",
 								"Create"
 							],
@@ -2178,7 +2178,7 @@
 	],
 	"variable": [
 		{
-			"id": "743acda9-e55d-4206-bcae-e468aaf39056",
+			"id": "9b161d33-a3d0-4625-b86b-c291a44bc82b",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
