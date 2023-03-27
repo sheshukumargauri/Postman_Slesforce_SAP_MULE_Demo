@@ -2155,7 +2155,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN",
+							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
 							"protocol": "http",
 							"host": [
 								"glukds02",
@@ -2178,6 +2178,11 @@
 								{
 									"key": "sap-language",
 									"value": "EN"
+								},
+								{
+									"key": "id",
+									"value": "20000014",
+									"type": "text"
 								}
 							]
 						}
@@ -2298,7 +2303,7 @@
 	],
 	"variable": [
 		{
-			"id": "bca20317-9958-464e-a727-2d25cabc76d0",
+			"id": "02515dfd-fb0b-4247-a877-def894833a69",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
