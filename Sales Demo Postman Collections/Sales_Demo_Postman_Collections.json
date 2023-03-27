@@ -960,8 +960,19 @@
 							"script": {
 								"id": "103a9686-346b-43a7-9f3d-2a26435d4d14",
 								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f81e1aad-3c3d-4480-a621-c54c798ffbb2",
+								"exec": [
 									"var moment = require('moment');\r",
-									"pm.globals.set(\"today\", )"
+									"\r",
+									"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
 								],
 								"type": "text/javascript"
 							}
@@ -2440,7 +2451,7 @@
 	],
 	"variable": [
 		{
-			"id": "7baafd28-98b7-4e8a-8e32-ab8de51cab0f",
+			"id": "03d00cb0-3f85-4d17-8be8-56e0b42db8de",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
