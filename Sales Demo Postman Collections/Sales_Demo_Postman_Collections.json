@@ -832,7 +832,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"0000100217\",\r\n   \"PriceDate\":,\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"1009\",\r\n         \"Quantity\":\"10\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n      {\r\n         \"ProductCode\":\"2168\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n        {\r\n         \"ProductCode\":\"2169\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n      \r\n   ]\r\n}",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"0000100217\",\r\n   \"PriceDate\":\"2023-03-20\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"1009\",\r\n         \"Quantity\":\"10\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n      {\r\n         \"ProductCode\":\"2168\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n        {\r\n         \"ProductCode\":\"2169\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n      \r\n   ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2452,7 +2452,7 @@
 	],
 	"variable": [
 		{
-			"id": "3d95f719-33f3-4b95-9710-5dfacf412994",
+			"id": "4d6ebd44-bbb8-4c9b-9826-4bec3c3f56e8",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
