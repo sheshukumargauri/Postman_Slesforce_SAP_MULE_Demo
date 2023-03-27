@@ -2187,7 +2187,71 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "ce036c07-6c3b-4b22-b949-a0e07c528179",
+							"name": "ECD-Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"History"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										},
+										{
+											"key": "sap-language",
+											"value": "EN"
+										},
+										{
+											"key": "id",
+											"value": "20000014"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "SAP_SESSIONID_ECD_100=GUzKZOdyLRpWfkQhc8PPVN_0gb3MsRHtgS4YZtqH1-U%3d; path=/"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "1062"
+								},
+								{
+									"key": "sap-perf-fesrec",
+									"value": "1077465.000000"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QUOTEDOCUMENTFLOW\": {\n        \"DOCUMENTS\": [\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0020000014\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Quotation\",\n                \"LEVEL\": 0,\n                \"PRECEDINGDOCUMENTNUMBER\": \"\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0000000091\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Standard Order\",\n                \"LEVEL\": 1,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0020000014\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0080000034\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Outbound Delivery\",\n                \"LEVEL\": 2,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0000000091\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"20230327\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Picking request\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"4900000042\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"GD goods issue:delvy\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Open\",\n                \"CURRENTDOCUMENTNUMBER\": \"0090000041\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Invoice\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            }\n        ]\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
@@ -2303,7 +2367,7 @@
 	],
 	"variable": [
 		{
-			"id": "02515dfd-fb0b-4247-a877-def894833a69",
+			"id": "6bf722ce-214a-4f15-9054-fb3c16789b4a",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
