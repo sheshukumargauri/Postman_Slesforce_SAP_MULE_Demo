@@ -1654,10 +1654,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/quotation/Create?sap-client=100",
+							"raw": "http://support.sap.gauri.com:8002/sap/zsfdc_ecc_integ/quotation/Create?sap-client=100",
 							"protocol": "http",
 							"host": [
-								"glukds02",
+								"support",
+								"sap",
 								"gauri",
 								"com"
 							],
@@ -2179,7 +2180,7 @@
 	],
 	"variable": [
 		{
-			"id": "f7b25ce7-78d3-4db2-bfe2-eb582374a21e",
+			"id": "21b189c1-6368-4a4e-8165-90cc5d67e606",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
