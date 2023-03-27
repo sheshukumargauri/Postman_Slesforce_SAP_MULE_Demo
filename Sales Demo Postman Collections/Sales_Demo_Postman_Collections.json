@@ -2364,18 +2364,6 @@
 			]
 		},
 		{
-			"name": "New Request",
-			"id": "c086c5b7-8c31-4354-9c32-d00c8a25b0c0",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
 			"name": "ECD-Fetch-X-CSRF-Token",
 			"event": [
 				{
@@ -2439,7 +2427,7 @@
 	],
 	"variable": [
 		{
-			"id": "f16ecdee-d1f7-451f-969b-f28d08e56517",
+			"id": "8ac98af0-4f2e-41cb-a6c6-a1dbe92f0c2c",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
