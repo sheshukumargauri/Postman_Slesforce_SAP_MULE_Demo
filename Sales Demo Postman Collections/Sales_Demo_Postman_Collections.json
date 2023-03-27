@@ -445,8 +445,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"username": "{{SAP_ecd_USER}}",
-								"password": "WhiteSun1234$"
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ecd_USER}}"
 							}
 						},
 						"method": "POST",
@@ -2096,7 +2096,7 @@
 	],
 	"variable": [
 		{
-			"id": "5a4fc5bc-d714-43a5-90f4-47dade0b4a56",
+			"id": "7d4dccbc-d2eb-46e7-8d78-05fb516a47b5",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
