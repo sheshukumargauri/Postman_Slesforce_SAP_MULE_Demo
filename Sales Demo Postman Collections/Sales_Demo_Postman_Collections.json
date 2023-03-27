@@ -954,6 +954,19 @@
 				},
 				{
 					"name": "ECD DOUBLE QUOTES",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "103a9686-346b-43a7-9f3d-2a26435d4d14",
+								"exec": [
+									"var moment = require('moment');\r",
+									"pm.globals.set(\"today\", )"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "e882e5f6-7d19-465a-8ea2-1194b6dc7f56",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2427,7 +2440,7 @@
 	],
 	"variable": [
 		{
-			"id": "4dc61a26-3b80-4af1-a464-bcef1c2e468e",
+			"id": "7baafd28-98b7-4e8a-8e32-ab8de51cab0f",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
