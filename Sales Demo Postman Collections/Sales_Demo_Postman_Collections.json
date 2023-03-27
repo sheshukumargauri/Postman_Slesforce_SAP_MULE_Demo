@@ -2377,6 +2377,18 @@
 		},
 		{
 			"name": "ECD-Fetch-X-CSRF-Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1672a8c5-cdd6-471a-a309-e72ae6fcb0c6",
+						"exec": [
+							"pm.globals.set(\"x-csrf-token\",pm.response.headers.get())"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "e8336c95-91f5-4c3e-b077-b52838e87c0a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -2426,7 +2438,7 @@
 	],
 	"variable": [
 		{
-			"id": "00694d58-9e04-4981-b128-400742722062",
+			"id": "8d7f76f8-205b-480a-91a0-629292108f81",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
