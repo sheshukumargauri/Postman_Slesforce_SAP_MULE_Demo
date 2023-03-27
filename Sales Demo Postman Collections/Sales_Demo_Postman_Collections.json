@@ -987,8 +987,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "{{SAP_ET1_PASSWORD}}",
-								"username": "{{SAP_ET1_USER}}"
+								"username": "{{SAP_ECD_USER}}",
+								"password": "{{SAP_ET1_PASSWORD}}"
 							}
 						},
 						"method": "POST",
@@ -2451,7 +2451,7 @@
 	],
 	"variable": [
 		{
-			"id": "42354d62-cd8e-4fe2-828b-7f8942aa42c6",
+			"id": "9c9e36ac-d581-4b8a-94e8-70d76de9234f",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
