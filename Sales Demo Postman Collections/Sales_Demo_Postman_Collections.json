@@ -2423,18 +2423,17 @@
 					}
 				],
 				"url": {
-					"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/Token/fetch?sap-client=100",
+					"raw": "http://support.sap.gauri.com:8002/ngw/Token/fetch?sap-client=100",
 					"protocol": "http",
 					"host": [
-						"glukds02",
+						"support",
+						"sap",
 						"gauri",
 						"com"
 					],
 					"port": "8002",
 					"path": [
-						"sap",
-						"bc",
-						"zsfdc_ecc_integ",
+						"ngw",
 						"Token",
 						"fetch"
 					],
@@ -2451,7 +2450,7 @@
 	],
 	"variable": [
 		{
-			"id": "859c99a0-044f-41f5-ae71-3a8362e4c888",
+			"id": "1bbc1237-c220-4597-a217-d9e224537c90",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
