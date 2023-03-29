@@ -218,8 +218,8 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "X-Requested-With",
-								"value": "true",
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
 								"type": "text"
 							}
 						],
@@ -2438,7 +2438,7 @@
 	],
 	"variable": [
 		{
-			"id": "f9405e7a-e6a8-407b-b5d6-80425f8d11b9",
+			"id": "c8650ea2-0e6e-4547-93db-0bde43f537dc",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
