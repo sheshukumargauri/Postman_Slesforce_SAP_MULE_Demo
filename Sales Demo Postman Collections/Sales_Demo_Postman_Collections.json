@@ -495,19 +495,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://support.sap.gauri.com:8002/sap/bc/zsfdc_ecc_integ/customer/maintain?sap-client=100",
-							"protocol": "http",
+							"raw": "{{ECD_URI}}/customer/maintain?sap-client=100",
 							"host": [
-								"support",
-								"sap",
-								"gauri",
-								"com"
+								"{{ECD_URI}}"
 							],
-							"port": "8002",
 							"path": [
-								"sap",
-								"bc",
-								"zsfdc_ecc_integ",
 								"customer",
 								"maintain"
 							],
@@ -2454,7 +2446,7 @@
 	],
 	"variable": [
 		{
-			"id": "52dae8a7-ef47-481f-8951-80006d9ad887",
+			"id": "443224dd-a949-44e0-9d31-35d9e95dc101",
 			"key": "QuotationId",
 			"value": "20000090"
 		}
