@@ -1,0 +1,3185 @@
+{
+	"info": {
+		"_postman_id": "8505ee56-7ead-465d-99b7-801f699abf3c",
+		"name": "Salesforce, SAP and Mule Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Customer sync to SAP ECC",
+			"item": [
+				{
+					"name": "Mule Local",
+					"id": "7ea1ac3f-c133-4bd4-991a-332933788196",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "",
+								"username": ""
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL...\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"75\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/maintain?sap-client=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0913195b-4dda-442c-99c1-9e135c436084",
+							"name": "http call to sap",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"glukds01",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"maintain_cust"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "cloud hub http customer sync to sap ecc Copy",
+					"id": "cdea492f-20ec-48ec-b062-411a90053a4c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL...\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://int-1-customer-sync-to-sap.uk-e1.cloudhub.io/customer/maintain"
+					},
+					"response": [
+						{
+							"id": "eb4622ff-9d25-4774-a31f-16804af8f1e8",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CH2.0 customer sync to sap ecc",
+					"id": "147a4362-1293-4f8f-88ac-d2a6f710a7a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL...\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"75\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+					},
+					"response": [
+						{
+							"id": "6577f801-68d1-448b-ae80-19f0db65df0e",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1",
+					"id": "1a7cd175-adf3-4946-8206-d620085cb4db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerName\":\"GL234\",\r\n    \"HouseNo\":\"1-2\",\r\n    \"Street\":\"Boleaward2\",\r\n    \"City\":\"Llincoln\",\r\n    \"PostCode\":\"LN2 2LL\",\r\n    \"Country\":\"United Kingdom\",\r\n    \"TelephoneNo\":\"123455\",\r\n    \"Email\":\"support@gauri.com\",\r\n    \"SalesOrg\":\"UK\",\r\n    \"SAPCustomerID\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/customer/maintain?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"glukds01",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cb108ded-d358-4509-bf20-24b85116a3d2",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds01.gauri.com:8003/sap/bc/zsfdc_ecc_integ/maintain_cust?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"glukds01",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"maintain_cust"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "http ECD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "932b0260-c446-4938-ab8b-65013408c977",
+								"exec": [
+									"//const context = pm.environment.name ? pm.environment : pm.collectionVariables;\r",
+									"\r",
+									"pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
+									"console.log(pm.globals.get(\"xcsrfToken\"));\r",
+									"//pm.response.headers(\"x-csrf-token\");\r",
+									"\r",
+									"//context.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
+									"//pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
+									"//console.log(pm.response.headers.get(\"x-csrf-token\"));\r",
+									"\r",
+									"/*\r",
+									"const context = pm.environment.name ? pm.environment : pm.collectionVariables;\r",
+									"\r",
+									"const response = JSON.parse(pm.response.text())\r",
+									"context.set(\"_jobId\", response.id);\r",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0aaa4134-5239-4d52-a7df-408c105108f4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\"CustomerName\":\"GL\",\"HouseNo\":\"1-2\",\"Street\":\"Boleaward\",\"City\":\"Llincoln\",\"PostCode\":\"LN2 2LL\",\"Country\":\"United Kingdom\",\"TelephoneNo\":\"123455\",\"Email\":\"support@gauri.com\",\"SalesOrg\":\"UK\",\"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/customer/maintain?sap-client=100",
+							"protocol": "http",
+							"host": [
+								"glukds02",
+								"gauri",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "942f68a7-09b2-42e6-8f68-e6e25af85202",
+							"name": "http call to sap",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer/maintain?sap-client=100",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"zsfdc_ecc_integ",
+										"customer",
+										"maintain"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "http ECD",
+					"id": "9c24687c-86db-487e-9881-ed48cfbae7dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerName\":\"GL234\",\r\n    \"HouseNo\":\"1-2\",\r\n    \"Street\":\"Boleaward2\",\r\n    \"City\":\"Llincoln\",\r\n    \"PostCode\":\"LN2 2LL\",\r\n    \"Country\":\"United Kingdom\",\r\n    \"TelephoneNo\":\"123455\",\r\n    \"Email\":\"support@gauri.com\",\r\n    \"SalesOrg\":\"UK\",\r\n    \"SAPCustomerID\":\"\"}\r\n\r\n\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ECD_URI}}/customer/maintain?sap-client=100",
+							"host": [
+								"{{ECD_URI}}"
+							],
+							"path": [
+								"customer",
+								"maintain"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "83becfa8-3f03-47fa-a69c-3153607a26e4",
+							"name": "Customer Creation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   CustomerName:\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/zsfdc_ecc_integ/customer/maintain?sap-client=100",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"zsfdc_ecc_integ",
+										"customer",
+										"maintain"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "content-length",
+									"value": "0"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "d2605912-6fe3-40c8-a060-294765a94f0b"
+		},
+		{
+			"name": "2. Get Pricing Details",
+			"item": [
+				{
+					"name": "Mule - Local",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "eb3ecd66-4c22-46ff-ad71-cf5c83e27e60",
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.globals.set('currentdate', moment().format((\"YYYYMMDD\")));\r",
+									"console.log(moment().format(\"YYYYMMDD\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "725b8e8c-1410-46fb-b903-ca07648cbe8b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":\"{{currentdate}}\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/Price/fetchPrice"
+					},
+					"response": [
+						{
+							"id": "d6720423-e0ad-4ae6-b645-bf6da8ab444e",
+							"name": "Mule - Local",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":\"{{currentdate}}\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/Price/fetchPrice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 09:26:57 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"Items\": [\n        {\n            \"ProductCode\": \"6\",\n            \"Quantity\": \"1.000\",\n            \"ListPrice\": \"4055.0000\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Cloud Hub Fetch Pricing",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "eb3ecd66-4c22-46ff-ad71-cf5c83e27e60",
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.globals.set('currentdate', moment().format((\"YYYYMMDD\")));\r",
+									"console.log(moment().format(\"YYYYMMDD\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a68c2cc0-2279-4c62-b036-2a8a5150da37",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":\"{{currentdate}}\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://int-2-fetch-pricing-details-from-sapecc.uk-e1.cloudhub.io/Price/fetchPrice"
+					},
+					"response": [
+						{
+							"id": "3591622a-8746-4941-a6f5-dcd5af2f6464",
+							"name": "Mule - Local",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":\"{{currentdate}}\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/Price/fetchPrice"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 09:26:57 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"Items\": [\n        {\n            \"ProductCode\": \"6\",\n            \"Quantity\": \"1.000\",\n            \"ListPrice\": \"4055.0000\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1",
+					"id": "eff81ffa-882a-4522-8b1a-f95856a3430a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a88b7e61-ee86-4a24-938f-4a5cc0d988f1",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Price"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										},
+										{
+											"key": "X-Requested-With",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "sap-usercontext=sap-client=800; path=/"
+								},
+								{
+									"key": "set-cookie",
+									"value": "MYSAPSSO2=AjQxMDMBABhTAEYARABDAF8ASQBOAFQARQBHACAAIAACAAY4ADAAMAADABBFAFQAMQAgACAAIAAgACAABAAYMgAwADIAMwAwADIAMgA0ADEAMQAzADUABQAEAAAACAYAAlgACQACRQD%2fAVUwggFRBgkqhkiG9w0BBwKgggFCMIIBPgIBATELMAkGBSsOAwIaBQAwCwYJKoZIhvcNAQcBMYIBHTCCARkCAQEwbzBkMQswCQYDVQQGEwJERTEcMBoGA1UEChMTU0FQIFRydXN0IENvbW11bml0eTETMBEGA1UECxMKU0FQIFdlYiBBUzEUMBIGA1UECxMLSTAxMjAwMDM0MTExDDAKBgNVBAMTA0lEMwIHIBEIGBMgRzAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwMjI0MTEzNTIzWjAjBgkqhkiG9w0BCQQxFgQUgtBM6qEvqLIWaSGz2D18GWvBw60wCQYHKoZIzjgEAwQuMCwCFFGX1nxDcYjIc4BygTwV551L5H3xAhRA0uTEXXPCk%21UMaozf8I6vcdx9rw%3d%3d; path=/; domain=.sap.gauri.com"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "67"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"ITEMS\": [\n        {\n            \"PRODUCTCODE\": \"1009\",\n            \"QUANTITY\": 1,\n            \"LISTPRICE\": 13.67\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1 DOUBLE QUOTES",
+					"id": "4a76afeb-0da0-4878-858e-ece112b1c0d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"0000100217\",\r\n   \"PriceDate\":\"2023-03-20\",\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"1009\",\r\n         \"Quantity\":\"10\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n      {\r\n         \"ProductCode\":\"2168\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      },\r\n        {\r\n         \"ProductCode\":\"2169\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n      \r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a687a7c4-fa83-4eb6-8d57-f51c18939040",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Price"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										},
+										{
+											"key": "X-Requested-With",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "sap-usercontext=sap-client=800; path=/"
+								},
+								{
+									"key": "set-cookie",
+									"value": "MYSAPSSO2=AjQxMDMBABhTAEYARABDAF8ASQBOAFQARQBHACAAIAACAAY4ADAAMAADABBFAFQAMQAgACAAIAAgACAABAAYMgAwADIAMwAwADIAMgA0ADEAMQAzADUABQAEAAAACAYAAlgACQACRQD%2fAVUwggFRBgkqhkiG9w0BBwKgggFCMIIBPgIBATELMAkGBSsOAwIaBQAwCwYJKoZIhvcNAQcBMYIBHTCCARkCAQEwbzBkMQswCQYDVQQGEwJERTEcMBoGA1UEChMTU0FQIFRydXN0IENvbW11bml0eTETMBEGA1UECxMKU0FQIFdlYiBBUzEUMBIGA1UECxMLSTAxMjAwMDM0MTExDDAKBgNVBAMTA0lEMwIHIBEIGBMgRzAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwMjI0MTEzNTIzWjAjBgkqhkiG9w0BCQQxFgQUgtBM6qEvqLIWaSGz2D18GWvBw60wCQYHKoZIzjgEAwQuMCwCFFGX1nxDcYjIc4BygTwV551L5H3xAhRA0uTEXXPCk%21UMaozf8I6vcdx9rw%3d%3d; path=/; domain=.sap.gauri.com"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "67"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"ITEMS\": [\n        {\n            \"PRODUCTCODE\": \"1009\",\n            \"QUANTITY\": 1,\n            \"LISTPRICE\": 13.67\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+					"id": "b9c94122-e84d-47ac-958d-dd095fbaff78",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  Recordtype: \"TA\",\r\n  Country: \"GB\",\r\n  CustomerId: \"100045\",\r\n  PriceDate:\"2023-01-23\",\r\n  Items: [\r\n    {\r\n      ProductCode: \"1009\",\r\n      Quantity: \"1\",\r\n      UOM: \"EA\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Price?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ECD Double Quotes",
+					"id": "5b6de420-dfa4-44da-968d-784253c4ca80",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":{{currentdate}},\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ECD_URI}}/quotation/Price?sap-client=100",
+							"host": [
+								"{{ECD_URI}}"
+							],
+							"path": [
+								"quotation",
+								"Price"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c67cd0fb-34cb-4574-9758-5580611eea14",
+							"name": "ECD Double Quotes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRF-Token",
+										"value": "{{xcsrfToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"Recordtype\":\"TA\",\r\n   \"Country\":\"GB\",\r\n   \"CustomerId\":\"8\",\r\n   \"PriceDate\":{{currentdate}},\r\n   \"Items\":[\r\n      {\r\n         \"ProductCode\":\"6\",\r\n         \"Quantity\":\"1\",\r\n         \"UOM\":\"EA\"\r\n      }\r\n   ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ECD_URI}}/quotation/Price?sap-client=100",
+									"host": [
+										"{{ECD_URI}}"
+									],
+									"path": [
+										"quotation",
+										"Price"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "66"
+								},
+								{
+									"key": "sap-perf-fesrec",
+									"value": "168966.000000"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"ITEMS\": [\n        {\n            \"PRODUCTCODE\": \"6\",\n            \"QUANTITY\": 1,\n            \"LISTPRICE\": 4055\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "5112c74f-0e43-4a18-abd0-ee665bd93a78",
+			"auth": {
+				"type": "basic",
+				"basic": {}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cc4fe53-7519-4991-9679-d145622dfd90",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4cffb1ae-0ee3-47d6-aaad-5a48e49da3b7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "3. Quotation Replication",
+			"item": [
+				{
+					"name": "Local-Replicate Quotation**",
+					"id": "fb611a54-9a3c-453c-8574-448adc62bd95",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"05-07-2023\",\r\n      \"ExpirationDate\":\"30-07-2030\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"2\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partners\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/Quotation/createQuotation"
+					},
+					"response": [
+						{
+							"id": "fbb0eda9-d101-452a-8f0c-82a5c12bd417",
+							"name": "Local-Replicate Quotation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"05-07-2023\",\r\n      \"ExpirationDate\":\"30-07-2030\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"2\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partners\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/Quotation/createQuotation"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 12:33:20 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQuotationId\": \"0020000064\",\n    \"ErrorMessage\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "CloudHub-Replicate Quotation**",
+					"id": "4b1d5288-6bbd-4702-a630-a25fe5aad5a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"05-07-2023\",\r\n      \"ExpirationDate\":\"30-07-2030\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"1\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partners\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://int-3-quotation-replication-to-sapecc.uk-e1.cloudhub.io/Quotation/createQuotation"
+					},
+					"response": [
+						{
+							"id": "44ef6d41-2b0c-4a4c-999a-7b2988ae7ba5",
+							"name": "CloudHub-Replicate Quotation**",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"05-07-2023\",\r\n      \"ExpirationDate\":\"30-07-2030\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"1\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partners\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://int-3-quotation-replication-to-sapecc.uk-e1.cloudhub.io/Quotation/createQuotation"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 14:19:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQuotationId\": \"0020000067\",\n    \"ErrorMessage\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1 -",
+					"id": "0a9324d6-e80b-43b3-98bd-53d34eb4381a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    QuoteRequest: {\r\n        QuoteName: \"GTPL Quote for salesforce\",\r\n        RecordType: \"0001\",\r\n        CreationDate:  \"2023-02-23\",\r\n        ExpirationDate: \"2023-07-23\",\r\n        LineItems: [\r\n            {\r\n                LineNo: \"123\",\r\n                ProductCode: \"1009\",\r\n                ProductDescription: \"Office 365\",\r\n                Quantity: \"10\",\r\n                UOM: \"EA\"\r\n            }\r\n        ],\r\n        partnerS: [\r\n            {\r\n                ERPId: \"100045\",\r\n                PartnerRole: \"AG\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ET1 - Double Quotes",
+					"id": "6c5f3ff7-aa7b-465f-b3a2-61985dd050f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "7a5b6a85-d3c9-41a7-b411-2aead7c4f173",
+							"name": "ET1 - Double Quotes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Create"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "50"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQUOTATIONID\": \"0020000106\",\n    \"ERRORMESSAGES\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1 - Multi items",
+					"id": "498957ec-eea7-4828-ae9e-3894344c45ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"20\",\r\n            \"ProductCode\":\"2168\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         },\r\n          {\r\n            \"LineNo\":\"30\",\r\n            \"ProductCode\":\"2169\",\r\n            \"ProductDescription\":\"Demo\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"Quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9aec5f27-33d9-4f6f-8816-e374ec390031",
+							"name": "ET1 - Double Quotes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"123\",\r\n            \"ProductCode\":\"1009\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"100045\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/Quotation/Create?sap-client=800",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"Quotation",
+										"Create"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "50"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQUOTATIONID\": \"0020000106\",\n    \"ERRORMESSAGES\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "ECD Multi Items **",
+					"id": "f21b070f-9c9c-4c20-91e9-b0c91c27e922",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"05-07-2023\",\r\n      \"ExpirationDate\":\"30-07-2030\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"1\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ECD_URI}}/quotation/Create?sap-client=100&sap-language=EN",
+							"host": [
+								"{{ECD_URI}}"
+							],
+							"path": [
+								"quotation",
+								"Create"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								},
+								{
+									"key": "sap-language",
+									"value": "EN"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c4748f51-6c62-4b6c-bee6-af184729bbbb",
+							"name": "ECD Multi Items",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRF-Token",
+										"value": "{{xcsrfToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"QuoteRequest\":{\r\n      \"QuoteName\":\"GTPL Quote for salesforce\",\r\n      \"RecordType\":\"0001\",\r\n      \"CreationDate\":\"2023-02-23\",\r\n      \"ExpirationDate\":\"2023-07-23\",\r\n      \"LineItems\":[\r\n         {\r\n            \"LineNo\":\"10\",\r\n            \"ProductCode\":\"6\",\r\n            \"ProductDescription\":\"Office 365\",\r\n            \"Quantity\":\"10\",\r\n            \"UOM\":\"EA\"\r\n         }\r\n      ],\r\n         \r\n      \"partnerS\":[\r\n         {\r\n            \"ERPId\":\"8\",\r\n            \"PartnerRole\":\"AG\"\r\n         }\r\n      ]\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/Create?sap-client=100",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"Create"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "50"
+								},
+								{
+									"key": "sap-perf-fesrec",
+									"value": "6360104.000000"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPQUOTATIONID\": \"0020000015\",\n    \"ERRORMESSAGES\": []\n}"
+						}
+					]
+				}
+			],
+			"id": "ac90c193-9800-4eae-b6a9-df44f4ed8cc9"
+		},
+		{
+			"name": "4. Quotation History",
+			"item": [
+				{
+					"name": "Local - Get Quotation History",
+					"id": "58430e7c-8877-44ab-8e22-513a836e8dc5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+					},
+					"response": [
+						{
+							"id": "1952a7fc-7bc1-4d9f-8e09-0764de946a39",
+							"name": "Local - Get Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1559"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 14:31:02 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0020000014\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Quotation\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000000091\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Standard Order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"0020000014\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0080000034\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Outbound Delivery\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0000000091\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"20230327\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4900000042\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"GD goods issue:delvy\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            },\n            {\n                \"DocumentStatus\": \"Open\",\n                \"CurrentDocumentNumber\": \"0090000041\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Invoice\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CloudHub- Get Quotation History",
+					"id": "3ad6f222-d487-440c-b383-3eb8f1804866",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://int-4-get-quotation-history-from-sapecc.uk-e1.cloudhub.io/Quotation/getHistory/{{QuotationId}}"
+					},
+					"response": [
+						{
+							"id": "30e32d8f-5ba2-44e4-bd66-81cb0a19b917",
+							"name": "CloudHub- Get Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://int-4-get-quotation-history-from-sapecc.uk-e1.cloudhub.io/Quotation/getHistory/{{QuotationId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jul 2023 16:19:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1559"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0020000014\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Quotation\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000000091\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Standard Order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"0020000014\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0080000034\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Outbound Delivery\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0000000091\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"20230327\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4900000042\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"GD goods issue:delvy\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            },\n            {\n                \"DocumentStatus\": \"Open\",\n                \"CurrentDocumentNumber\": \"0090000041\",\n                \"CreationDate\": \"2023-03-86Z\",\n                \"Description\": \"Invoice\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080000034\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1",
+					"id": "0fcef344-a316-4f27-a448-2d55b6efd3cd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ET1_PASSWORD}}",
+								"username": "{{SAP_ET1_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+					},
+					"response": [
+						{
+							"id": "3c506cd2-aabb-4aae-b3f0-1e8d568a587f",
+							"name": "Local - Get Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/Quotation/getHistory/{{QuotationId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1306"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Jan 2023 14:32:08 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0020000090\",\n                \"CreationDate\": \"2023-01-26Z\",\n                \"Description\": \"Quotation\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000014894\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"0020000090\"\n            },\n            {\n                \"DocumentStatus\": \"Being processed\",\n                \"CurrentDocumentNumber\": \"0080017354\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Delivery\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0000014894\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"20230127\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4900000000\",\n                \"CreationDate\": \"2023-01-27Z\",\n                \"Description\": \"GD goods issue:delvy\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0080017354\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CloudHub - sample - Get Quotation History Copy",
+					"id": "cd0bb034-7cd9-458a-813e-098882f6f7bf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66",
+								"username": "mule_basic_auth_user"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.5sc6y6-3.usa-e2.cloudhub.io/Quotation/getHistory/20000090"
+					},
+					"response": [
+						{
+							"id": "b027dbb1-9418-4564-bb49-e491a87da39c",
+							"name": "CloudHub - sample - Get Quotation History Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "https://int-4-get-quotation-history-from-sapecc-lzym2p.5sc6y6-3.usa-e2.cloudhub.io/Quotation/getHistory/20000090"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1860"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Feb 2023 11:03:49 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "ba1f2f70-c4c0-4cbe-bbe9-1fb32e4101cc"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QuoteDocumentFlow\": {\n        \"QuoteDocument\": [\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"1234567890\",\n                \"CreationDate\": \"2023-01-31\",\n                \"Description\": \"ABC Customer quote\",\n                \"Level\": \"0\",\n                \"PrecedingDocumentNumber\": \"\"\n            },\n            {\n                \"DocumentStatus\": \"Being processed\",\n                \"CurrentDocumentNumber\": \"0987654321\",\n                \"CreationDate\": \"2023-05-30\",\n                \"Description\": \"Sales order\",\n                \"Level\": \"1\",\n                \"PrecedingDocumentNumber\": \"1234567890\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0023478980\",\n                \"CreationDate\": \"2023-01-30\",\n                \"Description\": \"Delivery Document\",\n                \"Level\": \"2\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0000018033\",\n                \"CreationDate\": \"2019-06-04\",\n                \"Description\": \"Picking request\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"9000246099\",\n                \"CreationDate\": \"2023-01-30\",\n                \"Description\": \"Demo confrimation of service\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"4901220209\",\n                \"CreationDate\": \"2019-06-14\",\n                \"Description\": \"Demo-Despatch\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            },\n            {\n                \"DocumentStatus\": \"Completed\",\n                \"CurrentDocumentNumber\": \"0435782286\",\n                \"CreationDate\": \"2019-06-14\",\n                \"Description\": \"Demo Invoice\",\n                \"Level\": \"3\",\n                \"PrecedingDocumentNumber\": \"0987654321\"\n            }\n        ],\n        \"ErrorMessage\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ET1",
+					"id": "96356cee-a8bb-402f-a792-bd5f32dae791",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "Gauri05",
+								"username": "sguntuka"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=800",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8003",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"quotation",
+								"History"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "800"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0bb66e45-cb07-4c02-b3a0-935c1dbccdb7",
+							"name": "ET1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://support.sap.gauri.com:8003/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=800&id=20000090",
+									"protocol": "http",
+									"host": [
+										"support",
+										"sap",
+										"gauri",
+										"com"
+									],
+									"port": "8003",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"History"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "800"
+										},
+										{
+											"key": "id",
+											"value": "20000090"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "sap-usercontext=sap-client=800; path=/"
+								},
+								{
+									"key": "set-cookie",
+									"value": "MYSAPSSO2=AjQxMDMBABhTAEcAVQBOAFQAVQBLAEEAIAAgACAAIAACAAY4ADAAMAADABBFAFQAMQAgACAAIAAgACAABAAYMgAwADIAMwAwADIAMgA3ADAAOQAyADIABQAEAAAACAYAAlgACQACRQD%2fAVYwggFSBgkqhkiG9w0BBwKgggFDMIIBPwIBATELMAkGBSsOAwIaBQAwCwYJKoZIhvcNAQcBMYIBHjCCARoCAQEwbzBkMQswCQYDVQQGEwJERTEcMBoGA1UEChMTU0FQIFRydXN0IENvbW11bml0eTETMBEGA1UECxMKU0FQIFdlYiBBUzEUMBIGA1UECxMLSTAxMjAwMDM0MTExDDAKBgNVBAMTA0lEMwIHIBEIGBMgRzAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwMjI3MDkyMjQ0WjAjBgkqhkiG9w0BCQQxFgQUtReSGBdEyPCLoLMckFIqhK1qR0EwCQYHKoZIzjgEAwQvMC0CFQCCIa2ENsM6MyjlKW3JsPMM3%21AtNAIUNkUb4mXbg6tpJcG5Uj11IBDVkfM%3d; path=/; domain=.sap.gauri.com"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "893"
+								},
+								{
+									"key": "server",
+									"value": "SAP NetWeaver Application Server / ABAP 731"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QUOTEDOCUMENTFLOW\": {\n        \"QUOTEDOCUMENTS\": [\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0020000090\",\n                \"CREATIONDATE\": \"20230126\",\n                \"DESCRIPTION\": \"Quotation\",\n                \"LEVEL\": 0,\n                \"PRECEDINGDOCUMENTNUMBER\": \"\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0000014894\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Order\",\n                \"LEVEL\": 1,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0020000090\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Being processed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0080017354\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Delivery\",\n                \"LEVEL\": 2,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0000014894\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"20230127\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"Picking request\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080017354\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"4900000000\",\n                \"CREATIONDATE\": \"20230127\",\n                \"DESCRIPTION\": \"GD goods issue:delvy\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080017354\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ECD-Quotation History",
+					"id": "3b2178a1-8122-43bf-9379-c80339dccc7e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
+							"protocol": "http",
+							"host": [
+								"glukds02",
+								"gauri",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"quotation",
+								"History"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								},
+								{
+									"key": "sap-language",
+									"value": "EN"
+								},
+								{
+									"key": "id",
+									"value": "20000014"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "ce036c07-6c3b-4b22-b949-a0e07c528179",
+							"name": "ECD-Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"History"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										},
+										{
+											"key": "sap-language",
+											"value": "EN"
+										},
+										{
+											"key": "id",
+											"value": "20000014"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "SAP_SESSIONID_ECD_100=GUzKZOdyLRpWfkQhc8PPVN_0gb3MsRHtgS4YZtqH1-U%3d; path=/"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "1062"
+								},
+								{
+									"key": "sap-perf-fesrec",
+									"value": "1077465.000000"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QUOTEDOCUMENTFLOW\": {\n        \"DOCUMENTS\": [\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0020000014\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Quotation\",\n                \"LEVEL\": 0,\n                \"PRECEDINGDOCUMENTNUMBER\": \"\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0000000091\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Standard Order\",\n                \"LEVEL\": 1,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0020000014\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0080000034\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Outbound Delivery\",\n                \"LEVEL\": 2,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0000000091\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"20230327\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Picking request\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"4900000042\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"GD goods issue:delvy\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Open\",\n                \"CURRENTDOCUMENTNUMBER\": \"0090000041\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Invoice\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ECD-Quotation History",
+					"id": "2b3c3120-87ab-4eec-87d3-dcff00c3fc02",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{SAP_ECD\n_PASSWORD}}",
+								"username": "{{SAP_ECD_USER}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://support.sap.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
+							"protocol": "http",
+							"host": [
+								"support",
+								"sap",
+								"gauri",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"sap",
+								"bc",
+								"zsfdc_ecc_integ",
+								"quotation",
+								"History"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								},
+								{
+									"key": "sap-language",
+									"value": "EN"
+								},
+								{
+									"key": "id",
+									"value": "20000014"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "16d2c075-6b3c-41a3-a26a-f1d45355e279",
+							"name": "ECD-Quotation History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://glukds02.gauri.com:8002/sap/bc/zsfdc_ecc_integ/quotation/History?sap-client=100&sap-language=EN&id=20000014",
+									"protocol": "http",
+									"host": [
+										"glukds02",
+										"gauri",
+										"com"
+									],
+									"port": "8002",
+									"path": [
+										"sap",
+										"bc",
+										"zsfdc_ecc_integ",
+										"quotation",
+										"History"
+									],
+									"query": [
+										{
+											"key": "sap-client",
+											"value": "100"
+										},
+										{
+											"key": "sap-language",
+											"value": "EN"
+										},
+										{
+											"key": "id",
+											"value": "20000014"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "SAP_SESSIONID_ECD_100=GUzKZOdyLRpWfkQhc8PPVN_0gb3MsRHtgS4YZtqH1-U%3d; path=/"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "1062"
+								},
+								{
+									"key": "sap-perf-fesrec",
+									"value": "1077465.000000"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"QUOTEDOCUMENTFLOW\": {\n        \"DOCUMENTS\": [\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0020000014\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Quotation\",\n                \"LEVEL\": 0,\n                \"PRECEDINGDOCUMENTNUMBER\": \"\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0000000091\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Standard Order\",\n                \"LEVEL\": 1,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0020000014\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"0080000034\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Outbound Delivery\",\n                \"LEVEL\": 2,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0000000091\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"20230327\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Picking request\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Completed\",\n                \"CURRENTDOCUMENTNUMBER\": \"4900000042\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"GD goods issue:delvy\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            },\n            {\n                \"DOCUMENTSTATUS\": \"Open\",\n                \"CURRENTDOCUMENTNUMBER\": \"0090000041\",\n                \"CREATIONDATE\": \"20230327\",\n                \"DESCRIPTION\": \"Invoice\",\n                \"LEVEL\": 3,\n                \"PRECEDINGDOCUMENTNUMBER\": \"0080000034\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "59a381c3-002c-4aef-abf2-3b93c5b2c0ff"
+		},
+		{
+			"name": "5. Customer sync to SFDC",
+			"item": [
+				{
+					"name": "Mule Local",
+					"id": "8a5b312f-b468-401f-8e5b-2273c815ab2d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.1\"?>\r\n<ZDEBMAS>\r\n\t<IDOC BEGIN=\"1\">\r\n\t\t<EDI_DC40 SEGMENT=\"1\">\r\n\t\t\t<TABNAM>EDI_DC40</TABNAM>\r\n\t\t\t<MANDT>100</MANDT>\r\n\t\t\t<DOCNUM>0000000000198089</DOCNUM>\r\n\t\t\t<DOCREL>750</DOCREL>\r\n\t\t\t<STATUS>30</STATUS>\r\n\t\t\t<DIRECT>1</DIRECT>\r\n\t\t\t<OUTMOD>2</OUTMOD>\r\n\t\t\t<IDOCTYP>DEBMAS07</IDOCTYP>\r\n\t\t\t<CIMTYP>ZDEBMAS</CIMTYP>\r\n\t\t\t<MESTYP>DEBMAS</MESTYP>\r\n\t\t\t<SNDPOR>SAPECD</SNDPOR>\r\n\t\t\t<SNDPRT>LS</SNDPRT>\r\n\t\t\t<SNDPRN>ECDCLNT100</SNDPRN>\r\n\t\t\t<RCVPOR>SFDC_FSL</RCVPOR>\r\n\t\t\t<RCVPRT>LS</RCVPRT>\r\n\t\t\t<RCVPRN>SFDC_FSL</RCVPRN>\r\n\t\t\t<CREDAT>20230807</CREDAT>\r\n\t\t\t<CRETIM>113206</CRETIM>\r\n\t\t\t<SERIAL>20230807113206</SERIAL>\r\n\t\t</EDI_DC40>\r\n\t\t<E1KNA1M SEGMENT=\"1\">\r\n\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t<KUNNR>0000000088</KUNNR>\r\n\t\t\t<BBBNR>0000000</BBBNR>\r\n\t\t\t<BBSNR>00000</BBSNR>\r\n\t\t\t<BUBKZ>0</BUBKZ>\r\n\t\t\t<KTOKD>Z001</KTOKD>\r\n\t\t\t<LAND1>GB</LAND1>\r\n\t\t\t<NAME1>SAP Customer Unit Test 1second line</NAME1>\r\n\t\t\t<NIELS>01</NIELS>\r\n\t\t\t<ORT01>Lincoln</ORT01>\r\n\t\t\t<PSTLZ>LN2 2LL</PSTLZ>\r\n\t\t\t<REGIO>LN</REGIO>\r\n\t\t\t<SPRAS>E</SPRAS>\r\n\t\t\t<STRAS>12 Carlton Blvrd</STRAS>\r\n\t\t\t<TELF1>0151112345</TELF1>\r\n\t\t\t<UMJAH>0000</UMJAH>\r\n\t\t\t<JMZAH>000000</JMZAH>\r\n\t\t\t<JMJAH>0000</JMJAH>\r\n\t\t\t<KATR1>1B</KATR1>\r\n\t\t\t<KATR5>5B</KATR5>\r\n\t\t\t<KATR10>10B</KATR10>\r\n\t\t\t<UMSA1>0</UMSA1>\r\n\t\t\t<HZUOR>00</HZUOR>\r\n\t\t\t<CIVVE>X</CIVVE>\r\n\t\t\t<SPRAS_ISO>EN</SPRAS_ISO>\r\n\t\t\t<CASSD>X</CASSD>\r\n\t\t\t<ZCUSTOMER_EXTENSION1 SEGMENT=\"1\">\r\n\t\t\t\t<STREET>12 Carlton Blvrd</STREET>\r\n\t\t\t\t<CITY>Lincoln</CITY>\r\n\t\t\t\t<POSTCODE>LN2 2LL</POSTCODE>\r\n\t\t\t\t<REGION>Lanarkshire</REGION>\r\n\t\t\t\t<COUNTRY>Uni</COUNTRY>\r\n\t\t\t\t<E_MAIL>sapcustomer1@sapcustomerunitest.com</E_MAIL>\r\n\t\t\t\t<TELEPHONE>0151112345</TELEPHONE>\r\n\t\t\t</ZCUSTOMER_EXTENSION1>\r\n\t\t\t<E1KNA11 SEGMENT=\"1\">\r\n\t\t\t\t<RGDATE>00000000</RGDATE>\r\n\t\t\t\t<RIC>00000000000</RIC>\r\n\t\t\t\t<RNEDATE>00000000</RNEDATE>\r\n\t\t\t\t<LEGALNAT>0000</LEGALNAT>\r\n\t\t\t</E1KNA11>\r\n\t\t\t<E1KNA1H SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<TDOBJECT>KNA1</TDOBJECT>\r\n\t\t\t\t<TDNAME>0000000088</TDNAME>\r\n\t\t\t\t<TDID>0002</TDID>\r\n\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t<E1KNA1L SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t<TDLINE>test</TDLINE>\r\n\t\t\t\t</E1KNA1L>\r\n\t\t\t</E1KNA1H>\r\n\t\t\t<E1KNVVM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<VKORG>Z002</VKORG>\r\n\t\t\t\t<VTWEG>Z0</VTWEG>\r\n\t\t\t\t<SPART>Z0</SPART>\r\n\t\t\t\t<KALKS>1</KALKS>\r\n\t\t\t\t<KDGRP>01</KDGRP>\r\n\t\t\t\t<AWAHR>000</AWAHR>\r\n\t\t\t\t<INCO1>CFR</INCO1>\r\n\t\t\t\t<INCO2>CFR</INCO2>\r\n\t\t\t\t<ANTLF>0</ANTLF>\r\n\t\t\t\t<LPRIO>02</LPRIO>\r\n\t\t\t\t<VSBED>01</VSBED>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<KTGRD>01</KTGRD>\r\n\t\t\t\t<ZTERM>0001</ZTERM>\r\n\t\t\t\t<UEBTO>0.0</UEBTO>\r\n\t\t\t\t<UNTTO>0.0</UNTTO>\r\n\t\t\t\t<PODTG>         0</PODTG>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>AG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>WE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVIM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<ALAND>GB</ALAND>\r\n\t\t\t\t\t<TATYP>MWST</TATYP>\r\n\t\t\t\t\t<TAXKD>0</TAXKD>\r\n\t\t\t\t</E1KNVIM>\r\n\t\t\t</E1KNVVM>\r\n\t\t\t<E1KNB1M SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<BUKRS>Z002</BUKRS>\r\n\t\t\t\t<AKONT>0000141010</AKONT>\r\n\t\t\t\t<ZINDT>00000000</ZINDT>\r\n\t\t\t\t<ZINRT>00</ZINRT>\r\n\t\t\t\t<VLIBB>0</VLIBB>\r\n\t\t\t\t<VRSZL>0</VRSZL>\r\n\t\t\t\t<VRSPR>0</VRSPR>\r\n\t\t\t\t<VERDT>00000000</VERDT>\r\n\t\t\t\t<WEBTR>0</WEBTR>\r\n\t\t\t\t<DATLZ>00000000</DATLZ>\r\n\t\t\t\t<KULTG>0</KULTG>\r\n\t\t\t\t<PERNR>00000000</PERNR>\r\n\t\t\t</E1KNB1M>\r\n\t\t\t<E1KNKAM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KLIMG>50000</KLIMG>\r\n\t\t\t\t<KLIME>50000</KLIME>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<DLAUS>00000000</DLAUS>\r\n\t\t\t</E1KNKAM>\r\n\t\t\t<E1KNKKM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KKBER>Z001</KKBER>\r\n\t\t\t\t<KLIMK>50000</KLIMK>\r\n\t\t\t\t<KNKLI>0000000088</KNKLI>\r\n\t\t\t\t<CTLPC>001</CTLPC>\r\n\t\t\t\t<DTREV>20230418</DTREV>\r\n\t\t\t\t<NXTRV>20230518</NXTRV>\r\n\t\t\t\t<PAYDB>00</PAYDB>\r\n\t\t\t\t<REVDB>00000000</REVDB>\r\n\t\t\t\t<SBDAT>00000000</SBDAT>\r\n\t\t\t\t<DBEKR>0</DBEKR>\r\n\t\t\t\t<DBMON>00000000</DBMON>\r\n\t\t\t\t<E1KNKKH SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDOBJECT>KNKK</TDOBJECT>\r\n\t\t\t\t\t<TDNAME>0000000088Z001</TDNAME>\r\n\t\t\t\t\t<TDID>0001</TDID>\r\n\t\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t\t<E1KNKKL SEGMENT=\"1\">\r\n\t\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t\t<TDLINE>Platinum Customer</TDLINE>\r\n\t\t\t\t\t</E1KNKKL>\r\n\t\t\t\t</E1KNKKH>\r\n\t\t\t</E1KNKKM>\r\n\t\t</E1KNA1M>\r\n\t</IDOC>\r\n</ZDEBMAS>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://localhost:8081/SAPSFDC/Customers/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "cloudhub http",
+					"id": "fadc6858-5b79-4679-ab26-3f2f07b88b36",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.1\"?>\r\n<ZDEBMAS>\r\n\t<IDOC BEGIN=\"1\">\r\n\t\t<EDI_DC40 SEGMENT=\"1\">\r\n\t\t\t<TABNAM>EDI_DC40</TABNAM>\r\n\t\t\t<MANDT>100</MANDT>\r\n\t\t\t<DOCNUM>0000000000198089</DOCNUM>\r\n\t\t\t<DOCREL>750</DOCREL>\r\n\t\t\t<STATUS>30</STATUS>\r\n\t\t\t<DIRECT>1</DIRECT>\r\n\t\t\t<OUTMOD>2</OUTMOD>\r\n\t\t\t<IDOCTYP>DEBMAS07</IDOCTYP>\r\n\t\t\t<CIMTYP>ZDEBMAS</CIMTYP>\r\n\t\t\t<MESTYP>DEBMAS</MESTYP>\r\n\t\t\t<SNDPOR>SAPECD</SNDPOR>\r\n\t\t\t<SNDPRT>LS</SNDPRT>\r\n\t\t\t<SNDPRN>ECDCLNT100</SNDPRN>\r\n\t\t\t<RCVPOR>SFDC_FSL</RCVPOR>\r\n\t\t\t<RCVPRT>LS</RCVPRT>\r\n\t\t\t<RCVPRN>SFDC_FSL</RCVPRN>\r\n\t\t\t<CREDAT>20230807</CREDAT>\r\n\t\t\t<CRETIM>113206</CRETIM>\r\n\t\t\t<SERIAL>20230807113206</SERIAL>\r\n\t\t</EDI_DC40>\r\n\t\t<E1KNA1M SEGMENT=\"1\">\r\n\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t<KUNNR>0000000088</KUNNR>\r\n\t\t\t<BBBNR>0000000</BBBNR>\r\n\t\t\t<BBSNR>00000</BBSNR>\r\n\t\t\t<BUBKZ>0</BUBKZ>\r\n\t\t\t<KTOKD>Z001</KTOKD>\r\n\t\t\t<LAND1>GB</LAND1>\r\n\t\t\t<NAME1>SAP Customer Unit Test 1second line</NAME1>\r\n\t\t\t<NIELS>01</NIELS>\r\n\t\t\t<ORT01>Lincoln</ORT01>\r\n\t\t\t<PSTLZ>LN2 2LL</PSTLZ>\r\n\t\t\t<REGIO>LN</REGIO>\r\n\t\t\t<SPRAS>E</SPRAS>\r\n\t\t\t<STRAS>12 Carlton Blvrd</STRAS>\r\n\t\t\t<TELF1>0151112345</TELF1>\r\n\t\t\t<UMJAH>0000</UMJAH>\r\n\t\t\t<JMZAH>000000</JMZAH>\r\n\t\t\t<JMJAH>0000</JMJAH>\r\n\t\t\t<KATR1>1B</KATR1>\r\n\t\t\t<KATR5>5B</KATR5>\r\n\t\t\t<KATR10>10B</KATR10>\r\n\t\t\t<UMSA1>0</UMSA1>\r\n\t\t\t<HZUOR>00</HZUOR>\r\n\t\t\t<CIVVE>X</CIVVE>\r\n\t\t\t<SPRAS_ISO>EN</SPRAS_ISO>\r\n\t\t\t<CASSD>X</CASSD>\r\n\t\t\t<ZCUSTOMER_EXTENSION1 SEGMENT=\"1\">\r\n\t\t\t\t<STREET>12 Carlton Blvrd</STREET>\r\n\t\t\t\t<CITY>Lincoln</CITY>\r\n\t\t\t\t<POSTCODE>LN2 2LL</POSTCODE>\r\n\t\t\t\t<REGION>Lanarkshire</REGION>\r\n\t\t\t\t<COUNTRY>Uni</COUNTRY>\r\n\t\t\t\t<E_MAIL>sapcustomer1@sapcustomerunitest.com</E_MAIL>\r\n\t\t\t\t<TELEPHONE>0151112345</TELEPHONE>\r\n\t\t\t</ZCUSTOMER_EXTENSION1>\r\n\t\t\t<E1KNA11 SEGMENT=\"1\">\r\n\t\t\t\t<RGDATE>00000000</RGDATE>\r\n\t\t\t\t<RIC>00000000000</RIC>\r\n\t\t\t\t<RNEDATE>00000000</RNEDATE>\r\n\t\t\t\t<LEGALNAT>0000</LEGALNAT>\r\n\t\t\t</E1KNA11>\r\n\t\t\t<E1KNA1H SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<TDOBJECT>KNA1</TDOBJECT>\r\n\t\t\t\t<TDNAME>0000000088</TDNAME>\r\n\t\t\t\t<TDID>0002</TDID>\r\n\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t<E1KNA1L SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t<TDLINE>test</TDLINE>\r\n\t\t\t\t</E1KNA1L>\r\n\t\t\t</E1KNA1H>\r\n\t\t\t<E1KNVVM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<VKORG>Z002</VKORG>\r\n\t\t\t\t<VTWEG>Z0</VTWEG>\r\n\t\t\t\t<SPART>Z0</SPART>\r\n\t\t\t\t<KALKS>1</KALKS>\r\n\t\t\t\t<KDGRP>01</KDGRP>\r\n\t\t\t\t<AWAHR>000</AWAHR>\r\n\t\t\t\t<INCO1>CFR</INCO1>\r\n\t\t\t\t<INCO2>CFR</INCO2>\r\n\t\t\t\t<ANTLF>0</ANTLF>\r\n\t\t\t\t<LPRIO>02</LPRIO>\r\n\t\t\t\t<VSBED>01</VSBED>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<KTGRD>01</KTGRD>\r\n\t\t\t\t<ZTERM>0001</ZTERM>\r\n\t\t\t\t<UEBTO>0.0</UEBTO>\r\n\t\t\t\t<UNTTO>0.0</UNTTO>\r\n\t\t\t\t<PODTG>         0</PODTG>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>AG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>WE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVIM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<ALAND>GB</ALAND>\r\n\t\t\t\t\t<TATYP>MWST</TATYP>\r\n\t\t\t\t\t<TAXKD>0</TAXKD>\r\n\t\t\t\t</E1KNVIM>\r\n\t\t\t</E1KNVVM>\r\n\t\t\t<E1KNB1M SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<BUKRS>Z002</BUKRS>\r\n\t\t\t\t<AKONT>0000141010</AKONT>\r\n\t\t\t\t<ZINDT>00000000</ZINDT>\r\n\t\t\t\t<ZINRT>00</ZINRT>\r\n\t\t\t\t<VLIBB>0</VLIBB>\r\n\t\t\t\t<VRSZL>0</VRSZL>\r\n\t\t\t\t<VRSPR>0</VRSPR>\r\n\t\t\t\t<VERDT>00000000</VERDT>\r\n\t\t\t\t<WEBTR>0</WEBTR>\r\n\t\t\t\t<DATLZ>00000000</DATLZ>\r\n\t\t\t\t<KULTG>0</KULTG>\r\n\t\t\t\t<PERNR>00000000</PERNR>\r\n\t\t\t</E1KNB1M>\r\n\t\t\t<E1KNKAM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KLIMG>50000</KLIMG>\r\n\t\t\t\t<KLIME>50000</KLIME>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<DLAUS>00000000</DLAUS>\r\n\t\t\t</E1KNKAM>\r\n\t\t\t<E1KNKKM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KKBER>Z001</KKBER>\r\n\t\t\t\t<KLIMK>50000</KLIMK>\r\n\t\t\t\t<KNKLI>0000000088</KNKLI>\r\n\t\t\t\t<CTLPC>001</CTLPC>\r\n\t\t\t\t<DTREV>20230418</DTREV>\r\n\t\t\t\t<NXTRV>20230518</NXTRV>\r\n\t\t\t\t<PAYDB>00</PAYDB>\r\n\t\t\t\t<REVDB>00000000</REVDB>\r\n\t\t\t\t<SBDAT>00000000</SBDAT>\r\n\t\t\t\t<DBEKR>0</DBEKR>\r\n\t\t\t\t<DBMON>00000000</DBMON>\r\n\t\t\t\t<E1KNKKH SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDOBJECT>KNKK</TDOBJECT>\r\n\t\t\t\t\t<TDNAME>0000000088Z001</TDNAME>\r\n\t\t\t\t\t<TDID>0001</TDID>\r\n\t\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t\t<E1KNKKL SEGMENT=\"1\">\r\n\t\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t\t<TDLINE>Platinum Customer</TDLINE>\r\n\t\t\t\t\t</E1KNKKL>\r\n\t\t\t\t</E1KNKKH>\r\n\t\t\t</E1KNKKM>\r\n\t\t</E1KNA1M>\r\n\t</IDOC>\r\n</ZDEBMAS>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://int-5-customer-sync-to-sfdc.uk-e1.cloudhub.io/SAPSFDC/Customers/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "cloud hub http customer sync to sap ecc Copy",
+					"id": "b889af00-5e05-49a8-ba6d-8d56c1b228f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL...\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://int-1-customer-sync-to-sap.uk-e1.cloudhub.io//customer/maintain"
+					},
+					"response": [
+						{
+							"id": "1d7a1cde-63ea-4dce-84c1-d33d263271a2",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
+				}
+			],
+			"id": "2ee29303-229c-4179-8337-1dbb251289c1"
+		},
+		{
+			"name": "6. Materials sync to SFDC",
+			"item": [
+				{
+					"name": "Mule Local",
+					"id": "d2ef2edc-23fd-4c43-aa92-7fd9f2f0026d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.1\"?>\r\n<MATMAS05>\r\n<IDOC>\r\n<EDI_DC40>\r\n<TABNAM> EDI_DC40</TABNAM>\r\n<MANDT> 100</MANDT>\r\n<DOCNUM> 0000000000199022</DOCNUM>\r\n<DOCREL> 750</DOCREL>\r\n<STATUS> 02</STATUS>\r\n<DIRECT> 1</DIRECT>\r\n<OUTMOD> 2</OUTMOD>\r\n<IDOCTYP> MATMAS05</IDOCTYP>\r\n<MESTYP> MATMAS</MESTYP>\r\n<SNDPOR> SAPECD</SNDPOR>\r\n<SNDPRT> LS</SNDPRT>\r\n<SNDPRN> ECDCLNT100</SNDPRN>\r\n<RCVPOR> MATMAS_MUL</RCVPOR>\r\n<RCVPRT> LS</RCVPRT>\r\n<RCVPRN> SFDC_FSL</RCVPRN>\r\n<CREDAT> 20231109</CREDAT>\r\n<CRETIM> 142154</CRETIM>\r\n<SERIAL> 20231109142153</SERIAL>\r\n</EDI_DC40>\r\n<E1MARAM>\r\n<MSGFN> 005</MSGFN>\r\n<MATNR> 000000000000000006</MATNR>\r\n<ERSDA> 20190925</ERSDA>\r\n<ERNAM> PKHARCHE</ERNAM>\r\n<LAEDA> 20230714</LAEDA>\r\n<AENAM> SGUNTUKA</AENAM>\r\n<PSTAT> KVLB</PSTAT>\r\n<MTART> FERT</MTART>\r\n<MBRSH> M</MBRSH>\r\n<MEINS> EA</MEINS>\r\n<BLANZ> 000</BLANZ>\r\n<BRGEW> 2.000</BRGEW>\r\n<NTGEW> 2.000</NTGEW>\r\n<GEWEI> KGM</GEWEI>\r\n<VOLUM> 0.000</VOLUM>\r\n<TRAGR> 0001</TRAGR>\r\n<WESCH> 0.000</WESCH>\r\n<LAENG> 0.000</LAENG>\r\n<BREIT> 0.000</BREIT>\r\n<HOEHE> 0.000</HOEHE>\r\n<ERGEW> 0.000</ERGEW>\r\n<ERVOL> 0.000</ERVOL>\r\n<GEWTO> 0.0</GEWTO>\r\n<VOLTO> 0.0</VOLTO>\r\n<FUELG> 0</FUELG>\r\n<STFAK> 0</STFAK>\r\n<MHDRZ> 0</MHDRZ>\r\n<MHDHB> 0</MHDHB>\r\n<MHDLP> 0</MHDLP>\r\n<VPSTA> KVLBZX</VPSTA>\r\n<MSTDE> 00000000</MSTDE>\r\n<MSTDV> 00000000</MSTDV>\r\n<COMPL> 00</COMPL>\r\n<MTPOS_MARA> NORM</MTPOS_MARA>\r\n<GEWTO_NEW> 0.0</GEWTO_NEW>\r\n<VOLTO_NEW> 0.0</VOLTO_NEW>\r\n<SLED_BBD> B</SLED_BBD>\r\n<ANP> 000000000</ANP>\r\n<E1MARA1>\r\n<MAXC> 0.000</MAXC>\r\n<MAXC_TOL> 0.0</MAXC_TOL>\r\n<MAXL> 0.000</MAXL>\r\n<MAXB> 0.000</MAXB>\r\n<MAXH> 0.000</MAXH>\r\n<QQTIME> 0</QQTIME>\r\n<MEDIUM> /</MEDIUM>\r\n<COMMODITY> /</COMMODITY>\r\n<SGT_CSGR> /</SGT_CSGR>\r\n<SGT_COVSA> /</SGT_COVSA>\r\n<SGT_REL> /</SGT_REL>\r\n</E1MARA1>\r\n<E1MAKTM>\r\n<MSGFN> 005</MSGFN>\r\n<SPRAS> E</SPRAS>\r\n<MAKTX> Ground Source Heat Pump</MAKTX>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n</E1MAKTM>\r\n<E1MARCM>\r\n<MSGFN> 005</MSGFN>\r\n<WERKS> Z002</WERKS>\r\n<PSTAT> VLB</PSTAT>\r\n<PLIFZ> 0</PLIFZ>\r\n<WEBAZ> 0</WEBAZ>\r\n<PERKZ> M</PERKZ>\r\n<AUSSS> 0.00</AUSSS>\r\n<MINBE> 0.000</MINBE>\r\n<EISBE> 0.000</EISBE>\r\n<BSTMI> 0.000</BSTMI>\r\n<BSTMA> 0.000</BSTMA>\r\n<BSTFE> 0.000</BSTFE>\r\n<BSTRF> 0.000</BSTRF>\r\n<MABST> 0.000</MABST>\r\n<LOSFX> 0</LOSFX>\r\n<AUSDT> 00000000</AUSDT>\r\n<BEARZ> 0.00</BEARZ>\r\n<RUEZT> 0.00</RUEZT>\r\n<TRANZ> 0.00</TRANZ>\r\n<BASMG> 0.000</BASMG>\r\n<DZEIT> 0</DZEIT>\r\n<MAXLZ> 0</MAXLZ>\r\n<UEETO> 0.0</UEETO>\r\n<UNETO> 0.0</UNETO>\r\n<WZEIT> 0</WZEIT>\r\n<VZUSL> 0.00</VZUSL>\r\n<UMLMC> 0.000</UMLMC>\r\n<LADGR> 0001</LADGR>\r\n<LGRAD> 0.0</LGRAD>\r\n<OBJID> 00000000</OBJID>\r\n<MTVFP> 02</MTVFP>\r\n<VRVEZ> 0.00</VRVEZ>\r\n<VBAMG> 0.000</VBAMG>\r\n<VBEAZ> 0.00</VBEAZ>\r\n<TRAME> 0.000</TRAME>\r\n<FXHOR> 000</FXHOR>\r\n<VINT1> 000</VINT1>\r\n<VINT2> 000</VINT2>\r\n<LOSGR> 0.000</LOSGR>\r\n<KAUSF> 0.00</KAUSF>\r\n<TAKZT> 0</TAKZT>\r\n<VRBDT> 00000000</VRBDT>\r\n<VRBFK> 0.00</VRBFK>\r\n<PREND> 00000000</PREND>\r\n<PRENG> 00000000</PRENG>\r\n<PRFRQ> 0</PRFRQ>\r\n<SHZET> 00</SHZET>\r\n<MMSTD> 00000000</MMSTD>\r\n<DPLHO> 0</DPLHO>\r\n<MINLS> 0.000</MINLS>\r\n<MAXLS> 0.000</MAXLS>\r\n<FIXLS> 0.000</FIXLS>\r\n<LTINC> 0.000</LTINC>\r\n<COMPL> 00</COMPL>\r\n<EISLO> 0.000</EISLO>\r\n<PPS_PEG_STRATEGY> 00</PPS_PEG_STRATEGY>\r\n<PPS_GIPRT> 0</PPS_GIPRT>\r\n<PPS_CONHAP> 0.000</PPS_CONHAP>\r\n<PPS_CONHAP_OUT> 0.000</PPS_CONHAP_OUT>\r\n<E1MARDM>\r\n<MSGFN> 005</MSGFN>\r\n<LGORT> FERT</LGORT>\r\n<PSTAT> L</PSTAT>\r\n<LMINB> 0.000</LMINB>\r\n<LBSTF> 0.000</LBSTF>\r\n<BSKRF> 0.0000000000000000E+00</BSKRF>\r\n</E1MARDM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230401</ERTAG>\r\n<VBWRT> 15.000</VBWRT>\r\n<KOVBW> 15.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230301</ERTAG>\r\n<VBWRT> 23.000</VBWRT>\r\n<KOVBW> 23.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190901</ERTAG>\r\n<VBWRT> 32.000</VBWRT>\r\n<KOVBW> 32.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n</E1MARCM>\r\n<E1MARMM>\r\n<MSGFN> 005</MSGFN>\r\n<MEINH> EA</MEINH>\r\n<UMREZ> 1</UMREZ>\r\n<UMREN> 1</UMREN>\r\n<LAENG> 0.000</LAENG>\r\n<BREIT> 0.000</BREIT>\r\n<HOEHE> 0.000</HOEHE>\r\n<VOLUM> 0.000</VOLUM>\r\n<BRGEW> 2.000</BRGEW>\r\n<GEWEI> KGM</GEWEI>\r\n<NEST_FTR> 0</NEST_FTR>\r\n<MAX_STACK> 0</MAX_STACK>\r\n<CAPAUSE> 0.000</CAPAUSE>\r\n</E1MARMM>\r\n<E1MBEWM>\r\n<MSGFN> 005</MSGFN>\r\n<BWKEY> Z002</BWKEY>\r\n<VPRSV> S</VPRSV>\r\n<VERPR> 20</VERPR>\r\n<STPRS> 20</STPRS>\r\n<PEINH> 1</PEINH>\r\n<BKLAS> 7920</BKLAS>\r\n<VMVPR> S</VMVPR>\r\n<VMVER> 20</VMVER>\r\n<VMSTP> 20</VMSTP>\r\n<VMPEI> 1</VMPEI>\r\n<VMBKL> 7920</VMBKL>\r\n<VJVPR> S</VJVPR>\r\n<VJVER> 20</VJVER>\r\n<VJSTP> 20</VJSTP>\r\n<LFGJA> 2023</LFGJA>\r\n<LFMON> 04</LFMON>\r\n<ZKPRS> 0</ZKPRS>\r\n<ZKDAT> 00000000</ZKDAT>\r\n<BWPRS> 0</BWPRS>\r\n<BWPRH> 0</BWPRH>\r\n<VJBWS> 0</VJBWS>\r\n<VJBWH> 0</VJBWH>\r\n<VVJLB> 9968.000</VVJLB>\r\n<VVMLB> 9968.000</VVMLB>\r\n<VVSAL> 199360</VVSAL>\r\n<ZPLPR> 0</ZPLPR>\r\n<ZPLP1> 0</ZPLP1>\r\n<ZPLP2> 0</ZPLP2>\r\n<ZPLP3> 0</ZPLP3>\r\n<ZPLD1> 00000000</ZPLD1>\r\n<ZPLD2> 00000000</ZPLD2>\r\n<ZPLD3> 00000000</ZPLD3>\r\n<BWPH1> 0</BWPH1>\r\n<BWPS1> 0</BWPS1>\r\n<ABWKZ> 00</ABWKZ>\r\n<PSTAT> B</PSTAT>\r\n<KALN1> 000100000004</KALN1>\r\n<KALNR> 000100000005</KALNR>\r\n<VERS1> 00</VERS1>\r\n<VERS2> 00</VERS2>\r\n<VERS3> 00</VERS3>\r\n<PPRDZ> 000</PPRDZ>\r\n<PPRDL> 000</PPRDL>\r\n<PPRDV> 000</PPRDV>\r\n<PDATZ> 0000</PDATZ>\r\n<PDATL> 0000</PDATL>\r\n<PDATV> 0000</PDATV>\r\n<VPLPR> 0</VPLPR>\r\n<VJBKL> 7920</VJBKL>\r\n<VJPEI> 1</VJPEI>\r\n<BWPEI> 0</BWPEI>\r\n</E1MBEWM>\r\n<E1MVKEM>\r\n<MSGFN> 005</MSGFN>\r\n<VKORG> Z002</VKORG>\r\n<VTWEG> Z0</VTWEG>\r\n<SKTOF> X</SKTOF>\r\n<VMSTD> 00000000</VMSTD>\r\n<AUMNG> 0.000</AUMNG>\r\n<LFMNG> 0.000</LFMNG>\r\n<EFMNG> 0.000</EFMNG>\r\n<SCMNG> 0.000</SCMNG>\r\n<MTPOS> NORM</MTPOS>\r\n<DWERK> Z002</DWERK>\r\n<KTGRM> 01</KTGRM>\r\n</E1MVKEM>\r\n<E1MLANM>\r\n<MSGFN> 005</MSGFN>\r\n<ALAND> GB</ALAND>\r\n<TATY1> MWST</TATY1>\r\n<TAXM1> 1</TAXM1>\r\n</E1MLANM>\r\n<E1MTXHM>\r\n<MSGFN> 005</MSGFN>\r\n<TDOBJECT> MATERIAL</TDOBJECT>\r\n<TDNAME> 000000000000000006</TDNAME>\r\n<TDID> GRUN</TDID>\r\n<TDSPRAS> E</TDSPRAS>\r\n<TDTEXTTYPE> ASCII</TDTEXTTYPE>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n<E1MTXLM>\r\n<MSGFN> 005</MSGFN>\r\n<TDFORMAT> *</TDFORMAT>\r\n<TDLINE> Basic Text</TDLINE>\r\n</E1MTXLM>\r\n</E1MTXHM>\r\n<E1MTXHM>\r\n<MSGFN> 005</MSGFN>\r\n<TDOBJECT> MVKE</TDOBJECT>\r\n<TDNAME> 000000000000000006Z002Z0</TDNAME>\r\n<TDID> 0001</TDID>\r\n<TDSPRAS> E</TDSPRAS>\r\n<TDTEXTTYPE> ASCII</TDTEXTTYPE>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n<E1MTXLM>\r\n<MSGFN> 005</MSGFN>\r\n<TDFORMAT> *</TDFORMAT>\r\n<TDLINE> Sales Text from Material master.</TDLINE>\r\n</E1MTXLM>\r\n</E1MTXHM>\r\n</E1MARAM>\r\n\r\n</IDOC>\r\n</MATMAS05>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://localhost:8081/SAPSFDC/Materials/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "Mule Local extra ds40 segments",
+					"id": "eec4ee5f-1147-4ddc-8a93-a3f13c3287a0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "{{MULE_BASIC_PASSWORD}}",
+								"username": "{{MULE_BASIC_USER}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.1\"?>\r\n<MATMAS05>\r\n<IDOC>\r\n<EDI_DC40>\r\n<TABNAM> EDI_DC40</TABNAM>\r\n<MANDT> 100</MANDT>\r\n<DOCNUM> 0000000000199022</DOCNUM>\r\n<DOCREL> 750</DOCREL>\r\n<STATUS> 02</STATUS>\r\n<DIRECT> 1</DIRECT>\r\n<OUTMOD> 2</OUTMOD>\r\n<IDOCTYP> MATMAS05</IDOCTYP>\r\n<MESTYP> MATMAS</MESTYP>\r\n<SNDPOR> SAPECD</SNDPOR>\r\n<SNDPRT> LS</SNDPRT>\r\n<SNDPRN> ECDCLNT100</SNDPRN>\r\n<RCVPOR> MATMAS_MUL</RCVPOR>\r\n<RCVPRT> LS</RCVPRT>\r\n<RCVPRN> SFDC_FSL</RCVPRN>\r\n<CREDAT> 20231109</CREDAT>\r\n<CRETIM> 142154</CRETIM>\r\n<SERIAL> 20231109142153</SERIAL>\r\n</EDI_DC40>\r\n<E1MARAM>\r\n<MSGFN> 005</MSGFN>\r\n<MATNR> 000000000000000006</MATNR>\r\n<ERSDA> 20190925</ERSDA>\r\n<ERNAM> PKHARCHE</ERNAM>\r\n<LAEDA> 20230714</LAEDA>\r\n<AENAM> SGUNTUKA</AENAM>\r\n<PSTAT> KVLB</PSTAT>\r\n<MTART> FERT</MTART>\r\n<MBRSH> M</MBRSH>\r\n<MEINS> EA</MEINS>\r\n<BLANZ> 000</BLANZ>\r\n<BRGEW> 2.000</BRGEW>\r\n<NTGEW> 2.000</NTGEW>\r\n<GEWEI> KGM</GEWEI>\r\n<VOLUM> 0.000</VOLUM>\r\n<TRAGR> 0001</TRAGR>\r\n<WESCH> 0.000</WESCH>\r\n<LAENG> 0.000</LAENG>\r\n<BREIT> 0.000</BREIT>\r\n<HOEHE> 0.000</HOEHE>\r\n<ERGEW> 0.000</ERGEW>\r\n<ERVOL> 0.000</ERVOL>\r\n<GEWTO> 0.0</GEWTO>\r\n<VOLTO> 0.0</VOLTO>\r\n<FUELG> 0</FUELG>\r\n<STFAK> 0</STFAK>\r\n<MHDRZ> 0</MHDRZ>\r\n<MHDHB> 0</MHDHB>\r\n<MHDLP> 0</MHDLP>\r\n<VPSTA> KVLBZX</VPSTA>\r\n<MSTDE> 00000000</MSTDE>\r\n<MSTDV> 00000000</MSTDV>\r\n<COMPL> 00</COMPL>\r\n<MTPOS_MARA> NORM</MTPOS_MARA>\r\n<GEWTO_NEW> 0.0</GEWTO_NEW>\r\n<VOLTO_NEW> 0.0</VOLTO_NEW>\r\n<SLED_BBD> B</SLED_BBD>\r\n<ANP> 000000000</ANP>\r\n<E1MARA1>\r\n<MAXC> 0.000</MAXC>\r\n<MAXC_TOL> 0.0</MAXC_TOL>\r\n<MAXL> 0.000</MAXL>\r\n<MAXB> 0.000</MAXB>\r\n<MAXH> 0.000</MAXH>\r\n<QQTIME> 0</QQTIME>\r\n<MEDIUM> /</MEDIUM>\r\n<COMMODITY> /</COMMODITY>\r\n<SGT_CSGR> /</SGT_CSGR>\r\n<SGT_COVSA> /</SGT_COVSA>\r\n<SGT_REL> /</SGT_REL>\r\n</E1MARA1>\r\n<E1MAKTM>\r\n<MSGFN> 005</MSGFN>\r\n<SPRAS> E</SPRAS>\r\n<MAKTX> Ground Source Heat Pump</MAKTX>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n</E1MAKTM>\r\n<E1MARCM>\r\n<MSGFN> 005</MSGFN>\r\n<WERKS> Z002</WERKS>\r\n<PSTAT> VLB</PSTAT>\r\n<PLIFZ> 0</PLIFZ>\r\n<WEBAZ> 0</WEBAZ>\r\n<PERKZ> M</PERKZ>\r\n<AUSSS> 0.00</AUSSS>\r\n<MINBE> 0.000</MINBE>\r\n<EISBE> 0.000</EISBE>\r\n<BSTMI> 0.000</BSTMI>\r\n<BSTMA> 0.000</BSTMA>\r\n<BSTFE> 0.000</BSTFE>\r\n<BSTRF> 0.000</BSTRF>\r\n<MABST> 0.000</MABST>\r\n<LOSFX> 0</LOSFX>\r\n<AUSDT> 00000000</AUSDT>\r\n<BEARZ> 0.00</BEARZ>\r\n<RUEZT> 0.00</RUEZT>\r\n<TRANZ> 0.00</TRANZ>\r\n<BASMG> 0.000</BASMG>\r\n<DZEIT> 0</DZEIT>\r\n<MAXLZ> 0</MAXLZ>\r\n<UEETO> 0.0</UEETO>\r\n<UNETO> 0.0</UNETO>\r\n<WZEIT> 0</WZEIT>\r\n<VZUSL> 0.00</VZUSL>\r\n<UMLMC> 0.000</UMLMC>\r\n<LADGR> 0001</LADGR>\r\n<LGRAD> 0.0</LGRAD>\r\n<OBJID> 00000000</OBJID>\r\n<MTVFP> 02</MTVFP>\r\n<VRVEZ> 0.00</VRVEZ>\r\n<VBAMG> 0.000</VBAMG>\r\n<VBEAZ> 0.00</VBEAZ>\r\n<TRAME> 0.000</TRAME>\r\n<FXHOR> 000</FXHOR>\r\n<VINT1> 000</VINT1>\r\n<VINT2> 000</VINT2>\r\n<LOSGR> 0.000</LOSGR>\r\n<KAUSF> 0.00</KAUSF>\r\n<TAKZT> 0</TAKZT>\r\n<VRBDT> 00000000</VRBDT>\r\n<VRBFK> 0.00</VRBFK>\r\n<PREND> 00000000</PREND>\r\n<PRENG> 00000000</PRENG>\r\n<PRFRQ> 0</PRFRQ>\r\n<SHZET> 00</SHZET>\r\n<MMSTD> 00000000</MMSTD>\r\n<DPLHO> 0</DPLHO>\r\n<MINLS> 0.000</MINLS>\r\n<MAXLS> 0.000</MAXLS>\r\n<FIXLS> 0.000</FIXLS>\r\n<LTINC> 0.000</LTINC>\r\n<COMPL> 00</COMPL>\r\n<EISLO> 0.000</EISLO>\r\n<PPS_PEG_STRATEGY> 00</PPS_PEG_STRATEGY>\r\n<PPS_GIPRT> 0</PPS_GIPRT>\r\n<PPS_CONHAP> 0.000</PPS_CONHAP>\r\n<PPS_CONHAP_OUT> 0.000</PPS_CONHAP_OUT>\r\n<E1MARDM>\r\n<MSGFN> 005</MSGFN>\r\n<LGORT> FERT</LGORT>\r\n<PSTAT> L</PSTAT>\r\n<LMINB> 0.000</LMINB>\r\n<LBSTF> 0.000</LBSTF>\r\n<BSKRF> 0.0000000000000000E+00</BSKRF>\r\n</E1MARDM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230401</ERTAG>\r\n<VBWRT> 15.000</VBWRT>\r\n<KOVBW> 15.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230301</ERTAG>\r\n<VBWRT> 23.000</VBWRT>\r\n<KOVBW> 23.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190901</ERTAG>\r\n<VBWRT> 32.000</VBWRT>\r\n<KOVBW> 32.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEGM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEGM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20231001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20230101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20221001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20220101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20211001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20210101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20201001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20200101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20191001</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190901</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190801</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190701</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190601</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190501</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190401</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190301</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190201</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n<E1MVEUM>\r\n<MSGFN> 005</MSGFN>\r\n<ERTAG> 20190101</ERTAG>\r\n<VBWRT> 0.000</VBWRT>\r\n<KOVBW> 0.000</KOVBW>\r\n<KZEXI> X</KZEXI>\r\n<ANTEI> 0.00</ANTEI>\r\n</E1MVEUM>\r\n</E1MARCM>\r\n<E1MARMM>\r\n<MSGFN> 005</MSGFN>\r\n<MEINH> EA</MEINH>\r\n<UMREZ> 1</UMREZ>\r\n<UMREN> 1</UMREN>\r\n<LAENG> 0.000</LAENG>\r\n<BREIT> 0.000</BREIT>\r\n<HOEHE> 0.000</HOEHE>\r\n<VOLUM> 0.000</VOLUM>\r\n<BRGEW> 2.000</BRGEW>\r\n<GEWEI> KGM</GEWEI>\r\n<NEST_FTR> 0</NEST_FTR>\r\n<MAX_STACK> 0</MAX_STACK>\r\n<CAPAUSE> 0.000</CAPAUSE>\r\n</E1MARMM>\r\n<E1MBEWM>\r\n<MSGFN> 005</MSGFN>\r\n<BWKEY> Z002</BWKEY>\r\n<VPRSV> S</VPRSV>\r\n<VERPR> 20</VERPR>\r\n<STPRS> 20</STPRS>\r\n<PEINH> 1</PEINH>\r\n<BKLAS> 7920</BKLAS>\r\n<VMVPR> S</VMVPR>\r\n<VMVER> 20</VMVER>\r\n<VMSTP> 20</VMSTP>\r\n<VMPEI> 1</VMPEI>\r\n<VMBKL> 7920</VMBKL>\r\n<VJVPR> S</VJVPR>\r\n<VJVER> 20</VJVER>\r\n<VJSTP> 20</VJSTP>\r\n<LFGJA> 2023</LFGJA>\r\n<LFMON> 04</LFMON>\r\n<ZKPRS> 0</ZKPRS>\r\n<ZKDAT> 00000000</ZKDAT>\r\n<BWPRS> 0</BWPRS>\r\n<BWPRH> 0</BWPRH>\r\n<VJBWS> 0</VJBWS>\r\n<VJBWH> 0</VJBWH>\r\n<VVJLB> 9968.000</VVJLB>\r\n<VVMLB> 9968.000</VVMLB>\r\n<VVSAL> 199360</VVSAL>\r\n<ZPLPR> 0</ZPLPR>\r\n<ZPLP1> 0</ZPLP1>\r\n<ZPLP2> 0</ZPLP2>\r\n<ZPLP3> 0</ZPLP3>\r\n<ZPLD1> 00000000</ZPLD1>\r\n<ZPLD2> 00000000</ZPLD2>\r\n<ZPLD3> 00000000</ZPLD3>\r\n<BWPH1> 0</BWPH1>\r\n<BWPS1> 0</BWPS1>\r\n<ABWKZ> 00</ABWKZ>\r\n<PSTAT> B</PSTAT>\r\n<KALN1> 000100000004</KALN1>\r\n<KALNR> 000100000005</KALNR>\r\n<VERS1> 00</VERS1>\r\n<VERS2> 00</VERS2>\r\n<VERS3> 00</VERS3>\r\n<PPRDZ> 000</PPRDZ>\r\n<PPRDL> 000</PPRDL>\r\n<PPRDV> 000</PPRDV>\r\n<PDATZ> 0000</PDATZ>\r\n<PDATL> 0000</PDATL>\r\n<PDATV> 0000</PDATV>\r\n<VPLPR> 0</VPLPR>\r\n<VJBKL> 7920</VJBKL>\r\n<VJPEI> 1</VJPEI>\r\n<BWPEI> 0</BWPEI>\r\n</E1MBEWM>\r\n<E1MVKEM>\r\n<MSGFN> 005</MSGFN>\r\n<VKORG> Z002</VKORG>\r\n<VTWEG> Z0</VTWEG>\r\n<SKTOF> X</SKTOF>\r\n<VMSTD> 00000000</VMSTD>\r\n<AUMNG> 0.000</AUMNG>\r\n<LFMNG> 0.000</LFMNG>\r\n<EFMNG> 0.000</EFMNG>\r\n<SCMNG> 0.000</SCMNG>\r\n<MTPOS> NORM</MTPOS>\r\n<DWERK> Z002</DWERK>\r\n<KTGRM> 01</KTGRM>\r\n</E1MVKEM>\r\n<E1MLANM>\r\n<MSGFN> 005</MSGFN>\r\n<ALAND> GB</ALAND>\r\n<TATY1> MWST</TATY1>\r\n<TAXM1> 1</TAXM1>\r\n</E1MLANM>\r\n<E1MTXHM>\r\n<MSGFN> 005</MSGFN>\r\n<TDOBJECT> MATERIAL</TDOBJECT>\r\n<TDNAME> 000000000000000006</TDNAME>\r\n<TDID> GRUN</TDID>\r\n<TDSPRAS> E</TDSPRAS>\r\n<TDTEXTTYPE> ASCII</TDTEXTTYPE>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n<E1MTXLM>\r\n<MSGFN> 005</MSGFN>\r\n<TDFORMAT> *</TDFORMAT>\r\n<TDLINE> Basic Text</TDLINE>\r\n</E1MTXLM>\r\n</E1MTXHM>\r\n<E1MTXHM>\r\n<MSGFN> 005</MSGFN>\r\n<TDOBJECT> MVKE</TDOBJECT>\r\n<TDNAME> 000000000000000006Z002Z0</TDNAME>\r\n<TDID> 0001</TDID>\r\n<TDSPRAS> E</TDSPRAS>\r\n<TDTEXTTYPE> ASCII</TDTEXTTYPE>\r\n<SPRAS_ISO> EN</SPRAS_ISO>\r\n<E1MTXLM>\r\n<MSGFN> 005</MSGFN>\r\n<TDFORMAT> *</TDFORMAT>\r\n<TDLINE> Sales Text from Material master.</TDLINE>\r\n</E1MTXLM>\r\n</E1MTXHM>\r\n</E1MARAM>\r\n<EDI_DS40>\r\n<MANDT> 100</MANDT>\r\n<DOCNUM> 0000000000199022</DOCNUM>\r\n<LOGDAT> 20231109</LOGDAT>\r\n<LOGTIM> 142154</LOGTIM>\r\n<STATUS> 01</STATUS>\r\n<STAMNO> 000</STAMNO>\r\n<UNAME> SGUNTUKA</UNAME>\r\n<SEGNUM> 000000</SEGNUM>\r\n</EDI_DS40>\r\n<EDI_DS40>\r\n<MANDT> 100</MANDT>\r\n<DOCNUM> 0000000000199022</DOCNUM>\r\n<LOGDAT> 20231109</LOGDAT>\r\n<LOGTIM> 142154</LOGTIM>\r\n<STATUS> 30</STATUS>\r\n<STAMQU> SAP</STAMQU>\r\n<STAMID> B1</STAMID>\r\n<STAMNO> 006</STAMNO>\r\n<STATYP> S</STATYP>\r\n<STAPA1> Receiver exists</STAPA1>\r\n<STAPA2> No filters</STAPA2>\r\n<STAPA3> No conversion</STAPA3>\r\n<STAPA4> No version change</STAPA4>\r\n<STATXT> &, &, &, &</STATXT>\r\n<UNAME> SGUNTUKA</UNAME>\r\n<SEGNUM> 000000</SEGNUM>\r\n</EDI_DS40>\r\n<EDI_DS40>\r\n<MANDT> 100</MANDT>\r\n<DOCNUM> 0000000000199022</DOCNUM>\r\n<LOGDAT> 20231109</LOGDAT>\r\n<LOGTIM> 142159</LOGTIM>\r\n<STATUS> 02</STATUS>\r\n<STAMQU> SAP</STAMQU>\r\n<STAMID> EA</STAMID>\r\n<STAMNO> 098</STAMNO>\r\n<STATYP> E</STATYP>\r\n<STAPA1> 411 /Connect to 192.168.20.232:8081 failed: NIECON</STAPA1>\r\n<STAPA2> N_REFUSED(-10)</STAPA2>\r\n<STAPA3> http://192.168.20.232:8081/SAPSFDC/Materials</STAPA3>\r\n<STATXT> Communication error when sending with HTTP</STATXT>\r\n<UNAME> SGUNTUKA</UNAME>\r\n<REPID> LEDI7F10</REPID>\r\n<SEGNUM> 000000</SEGNUM>\r\n</EDI_DS40>\r\n</IDOC>\r\n</MATMAS05>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://localhost:8081/SAPSFDC/Materials/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "cloudhub http",
+					"id": "727ab331-7019-4659-aff8-33081c228606",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "{{xcsrfToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.1\"?>\r\n<ZDEBMAS>\r\n\t<IDOC BEGIN=\"1\">\r\n\t\t<EDI_DC40 SEGMENT=\"1\">\r\n\t\t\t<TABNAM>EDI_DC40</TABNAM>\r\n\t\t\t<MANDT>100</MANDT>\r\n\t\t\t<DOCNUM>0000000000198089</DOCNUM>\r\n\t\t\t<DOCREL>750</DOCREL>\r\n\t\t\t<STATUS>30</STATUS>\r\n\t\t\t<DIRECT>1</DIRECT>\r\n\t\t\t<OUTMOD>2</OUTMOD>\r\n\t\t\t<IDOCTYP>DEBMAS07</IDOCTYP>\r\n\t\t\t<CIMTYP>ZDEBMAS</CIMTYP>\r\n\t\t\t<MESTYP>DEBMAS</MESTYP>\r\n\t\t\t<SNDPOR>SAPECD</SNDPOR>\r\n\t\t\t<SNDPRT>LS</SNDPRT>\r\n\t\t\t<SNDPRN>ECDCLNT100</SNDPRN>\r\n\t\t\t<RCVPOR>SFDC_FSL</RCVPOR>\r\n\t\t\t<RCVPRT>LS</RCVPRT>\r\n\t\t\t<RCVPRN>SFDC_FSL</RCVPRN>\r\n\t\t\t<CREDAT>20230807</CREDAT>\r\n\t\t\t<CRETIM>113206</CRETIM>\r\n\t\t\t<SERIAL>20230807113206</SERIAL>\r\n\t\t</EDI_DC40>\r\n\t\t<E1KNA1M SEGMENT=\"1\">\r\n\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t<KUNNR>0000000088</KUNNR>\r\n\t\t\t<BBBNR>0000000</BBBNR>\r\n\t\t\t<BBSNR>00000</BBSNR>\r\n\t\t\t<BUBKZ>0</BUBKZ>\r\n\t\t\t<KTOKD>Z001</KTOKD>\r\n\t\t\t<LAND1>GB</LAND1>\r\n\t\t\t<NAME1>SAP Customer Unit Test 1second line</NAME1>\r\n\t\t\t<NIELS>01</NIELS>\r\n\t\t\t<ORT01>Lincoln</ORT01>\r\n\t\t\t<PSTLZ>LN2 2LL</PSTLZ>\r\n\t\t\t<REGIO>LN</REGIO>\r\n\t\t\t<SPRAS>E</SPRAS>\r\n\t\t\t<STRAS>12 Carlton Blvrd</STRAS>\r\n\t\t\t<TELF1>0151112345</TELF1>\r\n\t\t\t<UMJAH>0000</UMJAH>\r\n\t\t\t<JMZAH>000000</JMZAH>\r\n\t\t\t<JMJAH>0000</JMJAH>\r\n\t\t\t<KATR1>1B</KATR1>\r\n\t\t\t<KATR5>5B</KATR5>\r\n\t\t\t<KATR10>10B</KATR10>\r\n\t\t\t<UMSA1>0</UMSA1>\r\n\t\t\t<HZUOR>00</HZUOR>\r\n\t\t\t<CIVVE>X</CIVVE>\r\n\t\t\t<SPRAS_ISO>EN</SPRAS_ISO>\r\n\t\t\t<CASSD>X</CASSD>\r\n\t\t\t<ZCUSTOMER_EXTENSION1 SEGMENT=\"1\">\r\n\t\t\t\t<STREET>12 Carlton Blvrd</STREET>\r\n\t\t\t\t<CITY>Lincoln</CITY>\r\n\t\t\t\t<POSTCODE>LN2 2LL</POSTCODE>\r\n\t\t\t\t<REGION>Lanarkshire</REGION>\r\n\t\t\t\t<COUNTRY>Uni</COUNTRY>\r\n\t\t\t\t<E_MAIL>sapcustomer1@sapcustomerunitest.com</E_MAIL>\r\n\t\t\t\t<TELEPHONE>0151112345</TELEPHONE>\r\n\t\t\t</ZCUSTOMER_EXTENSION1>\r\n\t\t\t<E1KNA11 SEGMENT=\"1\">\r\n\t\t\t\t<RGDATE>00000000</RGDATE>\r\n\t\t\t\t<RIC>00000000000</RIC>\r\n\t\t\t\t<RNEDATE>00000000</RNEDATE>\r\n\t\t\t\t<LEGALNAT>0000</LEGALNAT>\r\n\t\t\t</E1KNA11>\r\n\t\t\t<E1KNA1H SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<TDOBJECT>KNA1</TDOBJECT>\r\n\t\t\t\t<TDNAME>0000000088</TDNAME>\r\n\t\t\t\t<TDID>0002</TDID>\r\n\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t<E1KNA1L SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t<TDLINE>test</TDLINE>\r\n\t\t\t\t</E1KNA1L>\r\n\t\t\t</E1KNA1H>\r\n\t\t\t<E1KNVVM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<VKORG>Z002</VKORG>\r\n\t\t\t\t<VTWEG>Z0</VTWEG>\r\n\t\t\t\t<SPART>Z0</SPART>\r\n\t\t\t\t<KALKS>1</KALKS>\r\n\t\t\t\t<KDGRP>01</KDGRP>\r\n\t\t\t\t<AWAHR>000</AWAHR>\r\n\t\t\t\t<INCO1>CFR</INCO1>\r\n\t\t\t\t<INCO2>CFR</INCO2>\r\n\t\t\t\t<ANTLF>0</ANTLF>\r\n\t\t\t\t<LPRIO>02</LPRIO>\r\n\t\t\t\t<VSBED>01</VSBED>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<KTGRD>01</KTGRD>\r\n\t\t\t\t<ZTERM>0001</ZTERM>\r\n\t\t\t\t<UEBTO>0.0</UEBTO>\r\n\t\t\t\t<UNTTO>0.0</UNTTO>\r\n\t\t\t\t<PODTG>         0</PODTG>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>AG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>RG</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVPM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<PARVW>WE</PARVW>\r\n\t\t\t\t\t<KUNN2>0000000088</KUNN2>\r\n\t\t\t\t\t<PARZA>000</PARZA>\r\n\t\t\t\t</E1KNVPM>\r\n\t\t\t\t<E1KNVIM SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<ALAND>GB</ALAND>\r\n\t\t\t\t\t<TATYP>MWST</TATYP>\r\n\t\t\t\t\t<TAXKD>0</TAXKD>\r\n\t\t\t\t</E1KNVIM>\r\n\t\t\t</E1KNVVM>\r\n\t\t\t<E1KNB1M SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<BUKRS>Z002</BUKRS>\r\n\t\t\t\t<AKONT>0000141010</AKONT>\r\n\t\t\t\t<ZINDT>00000000</ZINDT>\r\n\t\t\t\t<ZINRT>00</ZINRT>\r\n\t\t\t\t<VLIBB>0</VLIBB>\r\n\t\t\t\t<VRSZL>0</VRSZL>\r\n\t\t\t\t<VRSPR>0</VRSPR>\r\n\t\t\t\t<VERDT>00000000</VERDT>\r\n\t\t\t\t<WEBTR>0</WEBTR>\r\n\t\t\t\t<DATLZ>00000000</DATLZ>\r\n\t\t\t\t<KULTG>0</KULTG>\r\n\t\t\t\t<PERNR>00000000</PERNR>\r\n\t\t\t</E1KNB1M>\r\n\t\t\t<E1KNKAM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KLIMG>50000</KLIMG>\r\n\t\t\t\t<KLIME>50000</KLIME>\r\n\t\t\t\t<WAERS>GBP</WAERS>\r\n\t\t\t\t<DLAUS>00000000</DLAUS>\r\n\t\t\t</E1KNKAM>\r\n\t\t\t<E1KNKKM SEGMENT=\"1\">\r\n\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t<KKBER>Z001</KKBER>\r\n\t\t\t\t<KLIMK>50000</KLIMK>\r\n\t\t\t\t<KNKLI>0000000088</KNKLI>\r\n\t\t\t\t<CTLPC>001</CTLPC>\r\n\t\t\t\t<DTREV>20230418</DTREV>\r\n\t\t\t\t<NXTRV>20230518</NXTRV>\r\n\t\t\t\t<PAYDB>00</PAYDB>\r\n\t\t\t\t<REVDB>00000000</REVDB>\r\n\t\t\t\t<SBDAT>00000000</SBDAT>\r\n\t\t\t\t<DBEKR>0</DBEKR>\r\n\t\t\t\t<DBMON>00000000</DBMON>\r\n\t\t\t\t<E1KNKKH SEGMENT=\"1\">\r\n\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t<TDOBJECT>KNKK</TDOBJECT>\r\n\t\t\t\t\t<TDNAME>0000000088Z001</TDNAME>\r\n\t\t\t\t\t<TDID>0001</TDID>\r\n\t\t\t\t\t<TDSPRAS>E</TDSPRAS>\r\n\t\t\t\t\t<TDSPRASISO>EN</TDSPRASISO>\r\n\t\t\t\t\t<E1KNKKL SEGMENT=\"1\">\r\n\t\t\t\t\t\t<MSGFN>005</MSGFN>\r\n\t\t\t\t\t\t<TDFORMAT>*</TDFORMAT>\r\n\t\t\t\t\t\t<TDLINE>Platinum Customer</TDLINE>\r\n\t\t\t\t\t</E1KNKKL>\r\n\t\t\t\t</E1KNKKH>\r\n\t\t\t</E1KNKKM>\r\n\t\t</E1KNA1M>\r\n\t</IDOC>\r\n</ZDEBMAS>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://int-5-customer-sync-to-sfdc.uk-e1.cloudhub.io/SAPSFDC/Customers/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "cloud hub http customer sync to sap ecc Copy",
+					"id": "7ed1f6b8-eac3-48d4-a1d3-e9eb181e568f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL...\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://int-1-customer-sync-to-sap.uk-e1.cloudhub.io//customer/maintain"
+					},
+					"response": [
+						{
+							"id": "b6eac952-f4a9-439c-9242-f52113171c8d",
+							"name": "cloud hub customer sync to sap ecc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CustomerName\": \"GL\",\r\n    \"HouseNo\": \"1-2\",\r\n    \"Street\": \"Boleaward\",\r\n    \"City\": \"Llincoln\",\r\n    \"PostCode\": \"LN2 2LL\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"TelephoneNo\": \"123455\",\r\n    \"Email\": \"support@gauri.com\",\r\n    \"SalesOrg\": \"UK\",\r\n    \"SAPCustomerID\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://int-1-customer-sync-to-sap-lzym2p.5sc6y6-1.usa-e2.cloudhub.io/customer/maintain"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 Jan 2023 11:10:43 GMT"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "e743b4d1-2c02-483e-af39-131620da25c0"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"SAPCustomerNo\": \"1234\",\n    \"ErrorMessage\": \"Sample error message\"\n}"
+						}
+					]
+				}
+			],
+			"id": "a67c1252-20b3-4366-9a42-f875d9601d3c"
+		},
+		{
+			"name": "Connection Test to SAP",
+			"item": [
+				{
+					"name": "Local SAP Connection Terst",
+					"id": "d8bd5121-02ac-4dba-9b4e-5bb1b6c0202a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/connection/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "Cloud Hub - SAP Connection Test",
+					"id": "f5e862b6-7ddc-4df1-80c4-de78d41786d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://connection-test-to-sap.uk-e1.cloudhub.io//connection/maintain"
+					},
+					"response": []
+				},
+				{
+					"name": "Cloud Hub - http-cloudhub SAP Connection Test",
+					"id": "f9144aca-7cef-4b30-a41b-e0a9197c5dbc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"CustomerName\":\"GL\",\r\n   \"HouseNo\":\"1-2\",\r\n   \"Street\":\"Boleaward\",\r\n   \"City\":\"Llincoln\",\r\n   \"PostCode\":\"LN2 2LL\",\r\n   \"Country\":\"United Kingdom\",\r\n   \"TelephoneNo\":\"123455\",\r\n   \"Email\":\"support@gauri.com\",\r\n   \"SalesOrg\":\"UK\",\r\n   \"SAPCustomerID\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://connection-test-to-sap.uk-e1.cloudhub.io//connection/maintain"
+					},
+					"response": []
+				}
+			],
+			"id": "b00e5096-535b-4912-aabb-5b3d7445960b"
+		},
+		{
+			"name": "Mule Connection Test",
+			"item": [
+				{
+					"name": "Local - Mule-Connection-Test -post()",
+					"id": "a3e2b770-9af3-49df-8856-074273cef37e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Request\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/mule/Connection-Test",
+						"description": "Basic Authentication Connection Test to Mule"
+					},
+					"response": [
+						{
+							"id": "1f852b64-c5db-4656-86c7-5c6563c3ee61",
+							"name": "Mule-Connection-Test",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						},
+						{
+							"id": "870e2ba9-0cd4-462c-96aa-7c3f2644a111",
+							"name": "Local - Mule-Connection-Test -get() Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"Request\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/mule/Connection-Test"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Jul 2023 10:23:09 GMT"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"Connection00\": \"Success\",\n    \"Your System Name\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test",
+					"id": "b1a89bec-fdb0-416e-be29-0194d198f185",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
+					},
+					"response": [
+						{
+							"id": "c6a9b85e-6a8c-4f72-9f6e-1fe1aea989bb",
+							"name": "Connection Test working",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Nov 2023 11:49:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"Connection00\": \"Success\",\n    \"Your System Name\": \"Salesforce\"\n}"
+						}
+					]
+				},
+				{
+					"name": "rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test",
+					"id": "7558fc11-98bf-4f1f-8db1-8e3d10352bd8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "mule_basic_auth_user",
+								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"test\":\"test\";}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
+					},
+					"response": []
+				}
+			],
+			"id": "2b5c59b1-60f7-49f5-81f8-283ea1e921f3"
+		},
+		{
+			"name": "ECD-Fetch-X-CSRF-Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1672a8c5-cdd6-471a-a309-e72ae6fcb0c6",
+						"exec": [
+							"pm.globals.set(\"xcsrfToken\",pm.response.headers.get(\"x-csrf-token\"));\r",
+							"console.log(pm.response.headers.get(\"x-csrf-token\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e8336c95-91f5-4c3e-b077-b52838e87c0a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{SAP_ECD\n_PASSWORD}}",
+						"username": "{{SAP_ECD_USER}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "fetch",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ECD_URI}}/Token/fetch?sap-client=100",
+					"host": [
+						"{{ECD_URI}}"
+					],
+					"path": [
+						"Token",
+						"fetch"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "80ba6d89-9236-4dc6-9c2d-377d3aad4ebd",
+					"name": "ECD-Fetch-X-CSRF-Token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "fetch",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ECD_URI}}/Token/fetch?sap-client=100",
+							"host": [
+								"{{ECD_URI}}"
+							],
+							"path": [
+								"Token",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "sap-client",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "0"
+						},
+						{
+							"key": "x-csrf-token",
+							"value": "ziEfcisNddT_gyfHeCQx1A=="
+						},
+						{
+							"key": "sap-perf-fesrec",
+							"value": "8164722.000000"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "{{MULE_BASIC_PASSWORD}}",
+			"username": "{{MULE_BASIC_USER}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ebea502b-3b41-4320-9445-25f6e1369acf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6bb99760-792c-499e-a1da-e361c1186c05",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "QuotationId",
+			"value": "20000014"
+		}
+	]
+}
