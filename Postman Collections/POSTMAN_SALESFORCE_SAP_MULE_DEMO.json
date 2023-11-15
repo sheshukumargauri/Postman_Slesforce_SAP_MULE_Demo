@@ -2934,68 +2934,6 @@
 					]
 				},
 				{
-					"name": "Mule-Connection-Test -post()",
-					"id": "34e16d81-4196-4b88-93e1-e07c5d737d80",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": {
-								"username": "mule_basic_auth_user",
-								"password": "JL42t0IP9wO%DCjSU@b0@*Bj66"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\"SFDC\"",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test",
-						"description": "Basic Authentication Connection Test to Mule"
-					},
-					"response": [
-						{
-							"id": "63ada3e9-19da-4cca-9ed8-f5fa50075a4c",
-							"name": "Mule-Connection-Test -post()",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "\"SFDC\"",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://impl-rest-connection-test-to-mule-lzym2p.5sc6y6-2.usa-e2.cloudhub.io/mule/Connection-Test"
-							},
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"name": "Content-Type",
-									"value": "application/json",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"Connection00\": \"Success\",\n    \"Your System Name\": \"SFDC\"\n}"
-						}
-					]
-				},
-				{
 					"name": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test",
 					"id": "b1a89bec-fdb0-416e-be29-0194d198f185",
 					"protocolProfileBehavior": {
@@ -3022,7 +2960,54 @@
 						},
 						"url": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "c6a9b85e-6a8c-4f72-9f6e-1fe1aea989bb",
+							"name": "Connection Test working",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Nov 2023 11:49:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"Connection00\": \"Success\",\n    \"Your System Name\": \"Salesforce\"\n}"
+						}
+					]
 				},
 				{
 					"name": "rest-connection-test-mule.uk-e1.cloudhub.io/mule/Connection-Test",
